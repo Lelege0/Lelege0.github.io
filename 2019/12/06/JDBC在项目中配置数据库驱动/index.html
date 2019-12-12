@@ -451,12 +451,32 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2019-12-07
+                </div>
                 
 
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    111
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    1 Min
+                </div>
                 
 				
                 
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
             
         </div>
@@ -584,6 +604,32 @@
     
 
     
+        <link rel="stylesheet" href="/libs/gitment/gitment-default.css">
+<link rel="stylesheet" href="/css/gitment.css">
+
+<div class="gitment-card card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitment-content" class="card-content"></div>
+</div>
+
+<script src="/libs/gitment/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+    id: 'Fri Dec 06 2019 17:41:53 GMT+0800',
+    owner: '',
+    repo: '',
+    oauth: {
+        client_id: '',
+        client_secret: ''
+    }
+});
+
+gitment.render('gitment-content');
+</script>
+    
 
     
 
@@ -596,64 +642,54 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2019/12/06/JDBC%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E9%A9%B1%E5%8A%A8/">
+                <a href="/2019/12/09/Tomcat%E5%9C%A8Eclipse%E9%83%A8%E7%BD%B2%E5%AE%8C%E6%88%90%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%90%AF%E5%8A%A8%EF%BC%8C%E4%BD%86%E6%98%AF%E8%BF%90%E8%A1%8C%E6%97%B6404%EF%BC%81/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="JDBC在项目中配置数据库驱动">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Tomcat在Eclipse部署完成也可以启动，但是运行时404！">
                         
-                        <span class="card-title">JDBC在项目中配置数据库驱动</span>
+                        <span class="card-title">Tomcat在Eclipse部署完成也可以启动，但是运行时404！</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1.右击项目Build Path——&gt;configure Build Path2.Add Exteranl JARs下载链接：Mysql-connection-java-版本-bin.jar 3.选择你的Ecllipse与之对应的JA
+                            Tomcat在Eclipse部署完成也可以启动，但是运行时404（运行startup.bat可以运行程序）！默认情况是如下图==默认部署时打开tomcat时所有选项都是不可选的，都是灰色的，此时要清除部署直接删除或者右键点击tomcat之后
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-06
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-09
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/Tomcat/" class="post-category">
+                                    Tomcat
                                 </a>
                             
-                            <a href="/categories/Java/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
-                                </a>
-                            
-                            <a href="/categories/Java/%E5%90%8E%E7%AB%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
-                                    数据库
+                            <a href="/categories/Tomcat/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JDBC/">
-                        <span class="chip bg-color">JDBC</span>
+                    <a href="/tags/Tomcat/">
+                        <span class="chip bg-color">Tomcat</span>
                     </a>
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                    <a href="/tags/Mysql/">
-                        <span class="chip bg-color">Mysql</span>
+                    <a href="/tags/Web%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                        <span class="chip bg-color">Web应用服务器</span>
                     </a>
                     
                 </div>
@@ -679,8 +715,8 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1.SpringBoot简介==Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。==
-1.1
+                            1.SpringBoot简介Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。
+1.1pom文
                         
                     </div>
                     <div class="publish-info">
@@ -859,6 +895,9 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">4k</span>&nbsp;字
             
             
             
