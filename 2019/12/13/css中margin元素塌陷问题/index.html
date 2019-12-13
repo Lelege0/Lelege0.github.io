@@ -4,8 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 乐乐哥">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="css中margin元素塌陷问题, 乐乐哥">
+    <meta name="description" content="css中margin元素塌陷 继承结构的元素，水平与垂直结构上的margin取其最大值
+1&amp;lt;div class=&#34;box&#34;&amp;gt;2    &amp;lt;div class=&#34;dad&#34;&amp;gt;3        &amp;lt;div class=&#34;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | 乐乐哥</title>
+    <title>css中margin元素塌陷问题 | 乐乐哥</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -281,13 +282,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        css中margin元素塌陷问题
                     </div>
                 </div>
             </div>
@@ -405,12 +406,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java/">
-                                <span class="chip bg-color">Java</span>
-                            </a>
-                        
-                            <a href="/tags/Hello-World/">
-                                <span class="chip bg-color">Hello World</span>
+                            <a href="/tags/css/">
+                                <span class="chip bg-color">css</span>
                             </a>
                         
                     </div>
@@ -421,12 +418,12 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Java/" class="post-category">
-                                Java
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
-                            <a href="/categories/Java/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                后端
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/css/" class="post-category">
+                                css
                             </a>
                         
                     </div>
@@ -438,21 +435,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-12-05
+                    2019-12-13
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2019-12-07
+                    2019-12-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    125
+                    360
                 </div>
                 
 
@@ -475,19 +472,12 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span></pre></td></tr></tbody></table></figure>
+                <h1 id="css中margin元素塌陷"><a href="#css中margin元素塌陷" class="headerlink" title="css中margin元素塌陷"></a>css中margin元素塌陷</h1><p> <em>继承结构的元素，水平与垂直结构上的margin取其最大值</em></p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&lt;div class="box"&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    &lt;div class="dad"&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        &lt;div class="son"&gt;&lt;/div&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &lt;/div&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&lt;/div&gt;</span></pre></td></tr></tbody></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo server</span></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">.box{</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">     width: 300px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    height: 300px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">}</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">.dad{</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    width: 100px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    height: 100px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    background: #000;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    margin-top: 50px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    margin-left: 50px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">}</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">.son{</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    margin-left: 100px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    /*margin-top: 100px;*/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    width: 50px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">    height: 50px;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">    background: blue;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">    }</span></pre></td></tr></tbody></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo generate</span></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span></pre></td></tr></tbody></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h5 id="根据上述代码先把margin-top注释掉-效果"><a href="#根据上述代码先把margin-top注释掉-效果" class="headerlink" title="根据上述代码先把margin-top注释掉(效果)"></a>根据上述代码先把margin-top注释掉(效果)</h5><p><img src="https://img-blog.csdnimg.cn/20191006205815838.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="注释之后的效果"><br>我们的蓝色方块根据黑色方块向左移动了100px，很正常，但是当我们将注释的代码打开的时候，根据上面的经验我们预测应该看到的是蓝色的方块到了黑色的方块的右下角<br><img src="https://img-blog.csdnimg.cn/20191006210542161.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="代码取消注释之后"><br>我们可以看到他并没有你找我们预想的那样，蓝色的移动到黑色的右下角，而是黑色的跟着蓝色的下移了50px，当然这就是margin的塌陷问题了，就是这个box好像不能作为dad移动的参照物了，这就是取名为margin塌陷的原因。==在水平和垂直方向上谁大取谁的而且是相对于承载这个元素的元素==</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -531,7 +521,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/Lelege0/2019/12/05/hello-world/">https://github.com/Lelege0/2019/12/05/hello-world/</a>
+                    <a href="https://github.com/Lelege0/2019/12/13/css%E4%B8%ADmargin%E5%85%83%E7%B4%A0%E5%A1%8C%E9%99%B7%E9%97%AE%E9%A2%98/">https://github.com/Lelege0/2019/12/13/css%E4%B8%ADmargin%E5%85%83%E7%B4%A0%E5%A1%8C%E9%99%B7%E9%97%AE%E9%A2%98/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -569,12 +559,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Java/">
-                                    <span class="chip bg-color">Java</span>
-                                </a>
-                            
-                                <a href="/tags/Hello-World/">
-                                    <span class="chip bg-color">Hello World</span>
+                                <a href="/tags/css/">
+                                    <span class="chip bg-color">css</span>
                                 </a>
                             
                         </div>
@@ -617,7 +603,7 @@
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Thu Dec 05 2019 22:11:24 GMT+0800',
+    id: 'Fri Dec 13 2019 09:35:51 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -641,97 +627,41 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2019/12/06/SpringBoot%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">
+                <a href="/2019/12/13/css%E4%B8%ADmargin%E5%85%83%E7%B4%A0%E5%A1%8C%E9%99%B7%E9%97%AE%E9%A2%98/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="SpringBoot基础（一）">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="css中margin元素塌陷问题">
                         
-                        <span class="card-title">SpringBoot基础（一）</span>
+                        <span class="card-title">css中margin元素塌陷问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1.SpringBoot简介Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。
-1.1pom文
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-06
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
-                                </a>
-                            
-                            <a href="/categories/Java/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/SpringBoot/">
-                        <span class="chip bg-color">SpringBoot</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/">
-                        <span class="chip bg-color">后端框架</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/12/05/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            css中margin元素塌陷 继承结构的元素，水平与垂直结构上的margin取其最大值
+1&lt;div class="box"&gt;2    &lt;div class="dad"&gt;3        &lt;div class="
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-13
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
-                            <a href="/categories/Java/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/css/" class="post-category">
+                                    css
                                 </a>
                             
                             
@@ -742,12 +672,61 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/css/">
+                        <span class="chip bg-color">css</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/12/09/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Java基础知识">
+                        
+                        <span class="card-title">Java基础知识</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1.汉字编码表地址以及各种编码的区域1.汉字编码2.各种编码范围==outer（标签）：就相当于表示它现在代表的某个循环。如果想跳出它所代表的循环，那么就break outer;如果想结束它所代表的此次循环，那么就continue oute
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
                     <a href="/tags/Java/">
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/Hello-World/">
-                        <span class="chip bg-color">Hello World</span>
+                    <a href="/tags/%E5%90%8E%E7%AB%AF/">
+                        <span class="chip bg-color">后端</span>
                     </a>
                     
                 </div>
