@@ -4,22 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="csdn_export_md, 乐乐哥">
-    <meta name="description" content="
-
-
-Column 1
-Column 2
-
-
-
-centered 文本居中
-right-aligned 文本居右
-
-
-
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-         ">
+    <meta name="keywords" content="MySQL基础（上）, 乐乐哥">
+    <meta name="description" content="MySQL基础操作1.1创建数据库create database 数据库名1.2显示数据库Show databases；1.3删除数据库Drop database 数据库名==创建表的约束条件== 约束条件 | 说明—|— PRIMARYK">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -27,7 +13,7 @@ right-aligned 文本居右
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>csdn_export_md | 乐乐哥</title>
+    <title>MySQL基础（上） | 乐乐哥</title>
     <link rel="icon" type="image/png" href="/favicon2.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -295,13 +281,13 @@ right-aligned 文本居右
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        csdn_export_md
+                        MySQL基础（上）
                     </div>
                 </div>
             </div>
@@ -417,12 +403,33 @@ right-aligned 文本居右
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/Mysql/">
+                                <span class="chip bg-color">Mysql</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                <span class="chip bg-color">数据库</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                数据库
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -445,14 +452,14 @@ right-aligned 文本居右
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    67
+                    845
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    3 Min
                 </div>
                 
 				
@@ -468,19 +475,34 @@ right-aligned 文本居右
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <table>
-<thead>
-<tr>
-<th align="center">Column 1</th>
-<th align="center">Column 2</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">centered 文本居中</td>
-<td align="center">right-aligned 文本居右</td>
-</tr>
-</tbody></table>
-<script>
+                <h1 id="MySQL基础操作"><a href="#MySQL基础操作" class="headerlink" title="MySQL基础操作"></a>MySQL基础操作</h1><h5 id="1-1创建数据库"><a href="#1-1创建数据库" class="headerlink" title="1.1创建数据库"></a>1.1创建数据库</h5><pre><code>create database 数据库名</code></pre><h5 id="1-2显示数据库"><a href="#1-2显示数据库" class="headerlink" title="1.2显示数据库"></a>1.2显示数据库</h5><pre><code>Show databases；</code></pre><h5 id="1-3删除数据库"><a href="#1-3删除数据库" class="headerlink" title="1.3删除数据库"></a>1.3删除数据库</h5><pre><code>Drop database 数据库名</code></pre><p>==创建表的约束条件==<br> 约束条件 | 说明<br>—|—<br> PRIMARYKEY | 标识该属性为该表的主键，可以唯一的标识对应的记录<br>FOREIGN KEY | 标识该属性为该表的外键，与某表的主键关联<br> NOT NULL | 标识该属性不能为空<br> UNIQUE | 标识该属性的值是唯一的<br> AUTO_INCREMENT | 标识该属性的值自动增加<br> DEFAULT  | 为该属性设置默认值 </p>
+<h5 id="1-4创建表（实例）"><a href="#1-4创建表（实例）" class="headerlink" title="1.4创建表（实例）"></a>1.4创建表（实例）</h5><pre><code>CREATE TABLE t_bookType(
+              id int primary key auto_increment,
+              bookTypeName varchar(20),
+              bookTypeDesc varchar(200)
+);</code></pre><h5 id="1-5查看表结构（实例）"><a href="#1-5查看表结构（实例）" class="headerlink" title="1.5查看表结构（实例）"></a>1.5查看表结构（实例）</h5><pre><code>desc t_bookType;
+show  create table t_bookType；</code></pre><h5 id="1-6修改表（实例）"><a href="#1-6修改表（实例）" class="headerlink" title="1.6修改表（实例）"></a>1.6修改表（实例）</h5><pre><code>alter table t_book rename t_book2;//修改表名
+alter table t_book change bookName bookName2 varchar(20);//修改字段
+alter table t_book add testField int first;//在第一个位置插入一行头为testField
+alter table t_book add test int after author;//在author之后插入一行头为test
+alter table t_book drop testField;//删除一行testField</code></pre><h5 id="1-7删除表（实例）"><a href="#1-7删除表（实例）" class="headerlink" title="1.7删除表（实例）"></a>1.7删除表（实例）</h5><pre><code>drop table t_bookType;//删除一个表，只能先删除子表再删除父表</code></pre><h5 id="1-8查询所有字段（实例）"><a href="#1-8查询所有字段（实例）" class="headerlink" title="1.8查询所有字段（实例）"></a>1.8查询所有字段（实例）</h5><pre><code>SELECT id,stuName,age,sex,gradeName FROM t_student;
+SELECT * FROM t_student;//查询字段的两种方式</code></pre><h5 id="1-9查询指定字段（实例）"><a href="#1-9查询指定字段（实例）" class="headerlink" title="1.9查询指定字段（实例）"></a>1.9查询指定字段（实例）</h5><pre><code>SELECT stuName,gradeName FROM t_student;//查询指定的字段</code></pre><h5 id="1-10where条件查询（实例）"><a href="#1-10where条件查询（实例）" class="headerlink" title="1.10where条件查询（实例）"></a>1.10where条件查询（实例）</h5><pre><code>SELECT * FROM t_student WHERE id=1;
+SELECT * FROM t_student WHERE age&gt;22;//条件表达式</code></pre><h5 id="1-11带IN关键字查询（实例）"><a href="#1-11带IN关键字查询（实例）" class="headerlink" title="1.11带IN关键字查询（实例）"></a>1.11带IN关键字查询（实例）</h5><pre><code>SELECT * FROM t_student WHERE age IN (21,23);
+SELECT * FROM t_student WHERE age NOT IN (21,23);//IN的使用</code></pre><h5 id="1-12带-BETWEENAND-的范围查询（实例）"><a href="#1-12带-BETWEENAND-的范围查询（实例）" class="headerlink" title="1.12带 BETWEENAND 的范围查询（实例）"></a>1.12带 BETWEENAND 的范围查询（实例）</h5><pre><code>SELECT * FROM t_student WHERE age BETWEEN 21 AND 24;
+SELECT * FROM t_student WHERE age NOT BETWEEN 21 AND 24;//表范围</code></pre><h5 id="1-13带-LIKE-的模糊查询（实例）"><a href="#1-13带-LIKE-的模糊查询（实例）" class="headerlink" title="1.13带 LIKE 的模糊查询（实例）"></a>1.13带 LIKE 的模糊查询（实例）</h5><pre><code>SELECT * FROM t_student WHERE stuName LIKE '张三';//查询特定信息
+SELECT * FROM t_student WHERE stuName LIKE '张三%';//查询信息中最前面带有此字段的
+SELECT * FROM t_student WHERE stuName LIKE '张三__';//查询四个字中最前面有特定字符的
+SELECT * FROM t_student WHERE stuName LIKE '%张三%';//模糊查询（查询所有带特定字符的字段）</code></pre><h5 id="1-14-空值查询（实例）"><a href="#1-14-空值查询（实例）" class="headerlink" title="1.14 空值查询（实例）"></a>1.14 空值查询（实例）</h5><pre><code>SELECT * FROM t_student WHERE sex IS NULL;
+SELECT * FROM t_student WHERE sex IS NOT NULL;//查询字段为空或不空</code></pre><h5 id="1-15-带-AND或OR-的多条件查询（实例）"><a href="#1-15-带-AND或OR-的多条件查询（实例）" class="headerlink" title="1.15 带 AND或OR 的多条件查询（实例）"></a>1.15 带 AND或OR 的多条件查询（实例）</h5><pre><code>SELECT * FROM t_student WHERE gradeName='一年级' AND age=23;
+SELECT * FROM t_student WHERE gradeName='一年级' OR age=23;//多条件查询</code></pre><h5 id="1-16DISTINCT-去重复查询（实例）"><a href="#1-16DISTINCT-去重复查询（实例）" class="headerlink" title="1.16DISTINCT 去重复查询（实例）"></a>1.16DISTINCT 去重复查询（实例）</h5><pre><code>SELECT DISTINCT gradeName FROM t_student;//去重复查询</code></pre><h5 id="2-1-对查询结果排序（实例）"><a href="#2-1-对查询结果排序（实例）" class="headerlink" title="2.1 对查询结果排序（实例）"></a>2.1 对查询结果排序（实例）</h5><pre><code>SELECT * FROM t_student ORDER BY age ASC;//升序排序
+SELECT * FROM t_student ORDER BY age DESC;//降序排序（给查询信息排序）</code></pre><h5 id="2-2-GROUP-BY-分组查询（实例）"><a href="#2-2-GROUP-BY-分组查询（实例）" class="headerlink" title="2.2 GROUP BY 分组查询（实例）"></a>2.2 GROUP BY 分组查询（实例）</h5><pre><code>SELECT * FROM t_student GROUP BY gradeName;//单独使用毫无意义
+SELECT gradeName, GROUP_CONCAT(stuName) FROM t_student GROUP BY gradeName;//与GROUP_CONCAT函数一起使用
+SELECT gradeName,COUNT(stuName) FROM t_student GROUP BY gradeName;//与聚合函数一起使用 
+SELECT gradeName,COUNT(stuName) FROM t_student GROUP BY gradeName HAVING COUNT(stuName)&gt;3;//与HAVING一起使用（限制输出的结果）
+SELECT gradeName,COUNT(stuName) FROM t_student GROUP BY gradeName WITH ROLLUP;//最后加一个人总行）
+SELECT gradeName, GROUP_CONCAT(stuName) FROM t_student GROUP BY gradeName WITH ROLLUP;</code></pre><h5 id="2-3-LIMIT-分页查询（实例）"><a href="#2-3-LIMIT-分页查询（实例）" class="headerlink" title="2.3 LIMIT 分页查询（实例）"></a>2.3 LIMIT 分页查询（实例）</h5><pre><code>SELECT * FROM t_student LIMIT 0,5;
+SELECT * FROM t_student LIMIT 5,5;
+SELECT * FROM t_student LIMIT 10,5;//LIMIT分页查询</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -523,7 +545,7 @@ right-aligned 文本居右
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/Lelege0/2019/12/28/csdn_export_md/">https://github.com/Lelege0/2019/12/28/csdn_export_md/</a>
+                    <a href="https://github.com/Lelege0/2019/12/28/MySQL%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8A%EF%BC%89/">https://github.com/Lelege0/2019/12/28/MySQL%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8A%EF%BC%89/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -560,7 +582,19 @@ right-aligned 文本居右
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                                <a href="/tags/Mysql/">
+                                    <span class="chip bg-color">Mysql</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                    <span class="chip bg-color">数据库</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -601,7 +635,7 @@ right-aligned 文本居右
 <script src="/libs/gitment/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'Sat Dec 28 2019 20:48:45 GMT+0800',
+    id: 'Sat Dec 28 2019 21:12:27 GMT+0800',
     owner: '',
     repo: '',
     oauth: {
@@ -625,53 +659,57 @@ gitment.render('gitment-content');
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2019/12/28/csdn_export_md/">
+                <a href="/2019/12/28/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD-1%EF%BC%89/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="csdn_export_md">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="MySQL数据库基础（中-1）">
                         
-                        <span class="card-title">csdn_export_md</span>
+                        <span class="card-title">MySQL数据库基础（中-1）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-
-
-Column 1
-Column 2
-
-
-
-centered 文本居中
-right-aligned 文本居右
-
-
-
-        document.querySelectorAll('.github-emoji')
-         
+                            MySQL数据库基本操作2 使用聚合函数查询2.4 COUNT()函数（实例）==COUNT()函数用来统计记录的条数；与 GOUPE BY 关键字一起使用==SELECT COUNT(*) FROM t_grade;//用来统计记录的条数
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-28
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-28
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Lelege
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    数据库
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/Mysql/">
+                        <span class="chip bg-color">Mysql</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -874,7 +912,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.3k</span>&nbsp;字
+                class="white-color">6.9k</span>&nbsp;字
             
             
             
