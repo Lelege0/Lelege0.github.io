@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>csdn_export_md</title>
+      <link href="/2019/12/28/csdn_export_md/"/>
+      <url>/2019/12/28/csdn_export_md/</url>
+      
+        <content type="html"><![CDATA[<table><thead><tr><th align="center">Column 1</th><th align="center">Column 2</th></tr></thead><tbody><tr><td align="center">centered 文本居中</td><td align="center">right-aligned 文本居右</td></tr></tbody></table><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>css中margin元素塌陷问题</title>
       <link href="/2019/12/13/css%E4%B8%ADmargin%E5%85%83%E7%B4%A0%E5%A1%8C%E9%99%B7%E9%97%AE%E9%A2%98/"/>
       <url>/2019/12/13/css%E4%B8%ADmargin%E5%85%83%E7%B4%A0%E5%A1%8C%E9%99%B7%E9%97%AE%E9%A2%98/</url>
