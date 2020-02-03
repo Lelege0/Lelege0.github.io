@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <meta name="keywords" content="SpringBoot与数据访问（JPA）, 乐乐哥">
     <meta name="description" content="四、整合SpringData JPA操作数据库1.引入JPA依赖JPA：ORM(Object Relational Mapping)
-&amp;lt;dependency&amp;gt;            &amp;lt;groupId&amp;gt;org.spri">
+&amp;lt;dependency&amp;gt;
+            &amp;lt;groupId&amp;gt;org.spr">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -493,17 +494,102 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="四、整合SpringData-JPA操作数据库"><a href="#四、整合SpringData-JPA操作数据库" class="headerlink" title="四、整合SpringData JPA操作数据库"></a>四、整合SpringData JPA操作数据库</h2><h6 id="1-引入JPA依赖"><a href="#1-引入JPA依赖" class="headerlink" title="1.引入JPA依赖"></a>1.引入JPA依赖</h6><p>JPA：ORM(Object Relational Mapping)</p>
-<figure class="highlight xml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-jpa<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span></pre></td></tr></tbody></table></figure>
-<p><strong>依赖关系图</strong><br><img src="https://img-blog.csdnimg.cn/20200203121303179.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="JPA依赖关系图"><br><strong>配置数据源</strong></p>
-<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">datasource:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">url:</span> <span class="string">jdbc:mysql://localhost:3306/jpa</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">username:</span> <span class="string">root</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">password:</span> <span class="number">1234567890</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">driver-class-name:</span> <span class="string">com.mysql.jdbc.Driver</span></span></pre></td></tr></tbody></table></figure>
-<h6 id="2-编写一个实体类（bean）和数据表进行映射，并且配置好映射关系；"><a href="#2-编写一个实体类（bean）和数据表进行映射，并且配置好映射关系；" class="headerlink" title="2.编写一个实体类（bean）和数据表进行映射，并且配置好映射关系；"></a>2.编写一个实体类（bean）和数据表进行映射，并且配置好映射关系；</h6><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.atorg.springboot.entity;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.annotation.JsonIgnoreProperties;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> javax.persistence.*;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//配置映射关系，使用jpa注解</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//@JsonIgnoreProperties(value = {"hibernateLazyInitializer"})</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">@Entity</span>     <span class="comment">//告诉JPA这是一个实体类（和数据表映射的类）</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">@Table</span>(name=<span class="string">"tb1_user"</span>)  <span class="comment">//使用@Table来指定和那个数据表对应;如果省略默认表名就是user</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>{</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="meta">@Id</span>            <span class="comment">///这是一个主键</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="meta">@GeneratedValue</span>(strategy = GenerationType.IDENTITY) <span class="comment">//表示主键自增</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">private</span> Integer id;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="meta">@Column</span>(name = <span class="string">"last_name"</span>,length = <span class="number">50</span>)  <span class="comment">//这是和数据表队对应的一个列</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">private</span> String lastName;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="meta">@Column</span>             <span class="comment">//省略默认列名就是属性名</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">private</span> String email;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span> </span>{</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> id;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    }</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Integer id)</span> </span>{</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">this</span>.id = id;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    }</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getLastName</span><span class="params">()</span> </span>{</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> lastName;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    }</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setLastName</span><span class="params">(String lastName)</span> </span>{</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">this</span>.lastName = lastName;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    }</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getEmail</span><span class="params">()</span> </span>{</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> email;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    }</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEmail</span><span class="params">(String email)</span> </span>{</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">this</span>.email = email;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    }</span></pre></td></tr><tr><td class="code"><pre><span class="line">}</span></pre></td></tr></tbody></table></figure>
-<p><strong>@Entity:告诉JPA这是一个实体类,和数据表映射类;<br>@Table(name=”tb1_user”)  :使用@Table来指定和那个数据表对应;如果省略默认表名就是类名小写即对应此表为user；<br>@Id：这是一个主键<br>@GeneratedValue(strategy = GenerationType.IDENTITY) ：表示主键自增；@Column(name = “last_name”,length = 50):表示这是和数据表队对应的一个列,可以自定义列名和长度，==如果省略默认列名就是属性名==</strong></p>
-<h6 id="3-编写一个Dao接口来操作实体类对应的数据表（Repository）"><a href="#3-编写一个Dao接口来操作实体类对应的数据表（Repository）" class="headerlink" title="3.编写一个Dao接口来操作实体类对应的数据表（Repository）"></a>3.编写一个Dao接口来操作实体类对应的数据表（Repository）</h6><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.atorg.springboot.repository;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> com.atorg.springboot.entity.User;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.data.jpa.repository.JpaRepository;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//继承JpaRepository来完成对数据库的操作</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserRepository</span> <span class="keyword">extends</span> <span class="title">JpaRepository</span>&lt;<span class="title">User</span>,<span class="title">Integer</span>&gt; </span>{</span></pre></td></tr><tr><td class="code"><pre><span class="line">}</span></pre></td></tr></tbody></table></figure>
-<p><strong>此外还得对jpa进行基本的配置</strong>参考==JpaRepository==</p>
-<figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span> </span></pre></td></tr><tr><td class="code"><pre><span class="line">  <span class="attr">jpa:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">hibernate:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">#      更新或者创建数据表结构(如果没有实体类中的数据表时将自动创建，如果存在将自动更新数据)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="attr">ddl-auto:</span> <span class="string">update</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">#      控制台显示sql</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attr">show-sql:</span> <span class="literal">true</span></span></pre></td></tr></tbody></table></figure>
-<p>==jpa.hibernate.ddl-auto: update  //更新或者创建数据表结构(如果没有实体类中的数据表时将自动创建，如果存在将自动更新数据)==<br>可以有下图看到默认的数据池是<strong>HikariPool</strong><br><img src="https://img-blog.csdnimg.cn/20200203172839832.png" alt="成功创建数据表"><br>数据库成功创建数据表<br><img src="https://img-blog.csdnimg.cn/20200203172925207.png" alt="数据库成功添加数据表"></p>
-<h6 id="4-编写Controller进行测试"><a href="#4-编写Controller进行测试" class="headerlink" title="4.编写Controller进行测试"></a>4.编写Controller进行测试</h6><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.atorg.springboot.controller;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> com.atorg.springboot.entity.User;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> com.atorg.springboot.repository.UserRepository;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.GetMapping;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.PathVariable;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Optional;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserController</span> </span>{</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="meta">@Autowired</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    UserRepository userRepository;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">//查询数据</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/user/{id}"</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">getUser</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Integer id)</span>{</span></pre></td></tr><tr><td class="code"><pre><span class="line">        User user = userRepository.findById(id).orElse(<span class="keyword">null</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> user;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    }</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">//插入数据</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/user"</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">insertUser</span><span class="params">(User user )</span></span>{</span></pre></td></tr><tr><td class="code"><pre><span class="line">        User save=userRepository.save(user);</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span> save;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    }</span></pre></td></tr><tr><td class="code"><pre><span class="line">}</span></pre></td></tr></tbody></table></figure>
-<p><strong>findById(id)，save()</strong> 这两个方法是UserRepository 因为<strong>继承JpaRepository在JpaRepository封装了操作数据库的所有方法</strong><br><strong>发送查询请求</strong><br><img src="https://img-blog.csdnimg.cn/20200203173651893.png" alt="在这里插入图片描述"><br><strong>控制台生成sql语句</strong><br><img src="https://img-blog.csdnimg.cn/20200203173618122.png" alt="在控制台生成的sql语句"><br><strong>发送插入数据请求</strong><br><img src="https://img-blog.csdnimg.cn/20200203173923542.png" alt="插入数据"><br><strong>控制台生成的sql语句</strong><br><img src="https://img-blog.csdnimg.cn/20200203174000360.png" alt="控制台生成的sql语句"><br><strong>数据库数据表的信息增加</strong><br><img src="https://img-blog.csdnimg.cn/20200203174054318.png" alt="数据库数据表的信息增加"></p>
+<pre><code>&lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;
+&lt;/dependency&gt;</code></pre><p><strong>依赖关系图</strong><br><img src="https://img-blog.csdnimg.cn/20200203121303179.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="JPA依赖关系图"><br><strong>配置数据源</strong></p>
+<pre><code>spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/jpa
+    username: root
+    password: 1234567890
+    driver-class-name: com.mysql.jdbc.Driver</code></pre><h6 id="2-编写一个实体类（bean）和数据表进行映射，并且配置好映射关系；"><a href="#2-编写一个实体类（bean）和数据表进行映射，并且配置好映射关系；" class="headerlink" title="2.编写一个实体类（bean）和数据表进行映射，并且配置好映射关系；"></a>2.编写一个实体类（bean）和数据表进行映射，并且配置好映射关系；</h6><pre><code>package com.atorg.springboot.entity;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import javax.persistence.*;
+
+//配置映射关系，使用jpa注解
+//@JsonIgnoreProperties(value = {"hibernateLazyInitializer"})
+@Entity     //告诉JPA这是一个实体类（和数据表映射的类）
+@Table(name="tb1_user")  //使用@Table来指定和那个数据表对应;如果省略默认表名就是user
+public class User {
+
+    @Id            ///这是一个主键
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //表示主键自增
+    private Integer id;
+
+    @Column(name = "last_name",length = 50)  //这是和数据表队对应的一个列
+    private String lastName;
+    @Column             //省略默认列名就是属性名
+    private String email;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+}</code></pre><p><strong>@Entity:告诉JPA这是一个实体类,和数据表映射类;<br>**@Table(name=”tb1_user”)  :使用@Table来指定和那个数据表对应;如果省略默认表名就是类名小写即对应此表为user；</strong><br><strong>@Id：这是一个主键</strong><br><strong>@GeneratedValue(strategy = GenerationType.IDENTITY) ：表示主键自增；@Column(name = “last_name”,length = 50):表示这是和数据表队对应的一个列,可以自定义列名和长度，如果省略默认列名就是属性名</strong></p>
+<h6 id="3-编写一个Dao接口来操作实体类对应的数据表（Repository）"><a href="#3-编写一个Dao接口来操作实体类对应的数据表（Repository）" class="headerlink" title="3.编写一个Dao接口来操作实体类对应的数据表（Repository）"></a>3.编写一个Dao接口来操作实体类对应的数据表（Repository）</h6><pre><code>package com.atorg.springboot.repository;
+
+import com.atorg.springboot.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+//继承JpaRepository来完成对数据库的操作
+public interface UserRepository extends JpaRepository&lt;User,Integer&gt; {
+}</code></pre><p><strong>此外还得对jpa进行基本的配置</strong>参考<strong>JpaRepository</strong></p>
+<pre><code>spring: 
+  jpa:
+    hibernate:
+#      更新或者创建数据表结构(如果没有实体类中的数据表时将自动创建，如果存在将自动更新数据)
+      ddl-auto: update
+#      控制台显示sql
+    show-sql: true</code></pre><p><strong>jpa.hibernate.ddl-auto: update  //更新或者创建数据表结构(如果没有实体类中的数据表时将自动创建，如果存在将自动更新数据)</strong><br>可以有下图看到默认的数据池是<strong>HikariPool</strong><br><img src="https://img-blog.csdnimg.cn/20200203172839832.png" alt="成功创建数据表"><br>数据库成功创建数据表<br><img src="https://img-blog.csdnimg.cn/20200203172925207.png" alt="数据库成功添加数据表"></p>
+<h6 id="4-编写Controller进行测试"><a href="#4-编写Controller进行测试" class="headerlink" title="4.编写Controller进行测试"></a>4.编写Controller进行测试</h6><pre><code>package com.atorg.springboot.controller;
+
+import com.atorg.springboot.entity.User;
+import com.atorg.springboot.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Optional;
+@RestController
+public class UserController {
+
+    @Autowired
+    UserRepository userRepository;
+    //查询数据
+    @GetMapping("/user/{id}")
+    public User getUser(@PathVariable("id") Integer id){
+        User user = userRepository.findById(id).orElse(null);
+        return user;
+    }
+    //插入数据
+    @GetMapping("/user")
+    public User insertUser(User user ){
+        User save=userRepository.save(user);
+        return save;
+    }
+}</code></pre><p><strong>findById(id)，save()</strong> 这两个方法是UserRepository 因为<strong>继承JpaRepository在JpaRepository封装了操作数据库的所有方法</strong><br><strong>发送查询请求</strong><br><img src="https://img-blog.csdnimg.cn/20200203173651893.png" alt="在这里插入图片描述"><br><strong>控制台生成sql语句</strong><br><img src="https://img-blog.csdnimg.cn/20200203173618122.png" alt="在控制台生成的sql语句"><br><strong>发送插入数据请求</strong><br><img src="https://img-blog.csdnimg.cn/20200203173923542.png" alt="插入数据"><br><strong>控制台生成的sql语句</strong><br><img src="https://img-blog.csdnimg.cn/20200203174000360.png" alt="控制台生成的sql语句"><br><strong>数据库数据表的信息增加</strong><br><img src="https://img-blog.csdnimg.cn/20200203174054318.png" alt="数据库数据表的信息增加"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -681,7 +767,8 @@ gitment.render('gitment-content');
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            三、整合MyBatis1.引入mybatis-starter(mybatis-spring-boot-starter)依赖&lt;dependency&gt;            &lt;groupId&gt;org.mybatis.sp
+                            三、整合MyBatis1.引入mybatis-starter(mybatis-spring-boot-starter)依赖&lt;dependency&gt;
+            &lt;groupId&gt;org.mybatis.s
                         
                     </div>
                     <div class="publish-info">
@@ -754,7 +841,8 @@ gitment.render('gitment-content');
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、整合最基本的JDBC1.引入最基本的jdbc和MySQL驱动依赖&lt;dependency&gt;                         //jdbc依赖            &lt;groupId&gt;org.spri
+                            一、整合最基本的JDBC1.引入最基本的jdbc和MySQL驱动依赖&lt;dependency&gt;                         //jdbc依赖
+            &lt;groupId&gt;org.spr
                         
                     </div>
                     <div class="publish-info">
@@ -784,16 +872,16 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/JDBC/">
+                        <span class="chip bg-color">JDBC</span>
+                    </a>
+                    
                     <a href="/tags/SpringBoot/">
                         <span class="chip bg-color">SpringBoot</span>
                     </a>
                     
                     <a href="/tags/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/">
                         <span class="chip bg-color">后端框架</span>
-                    </a>
-                    
-                    <a href="/tags/JDBC/">
-                        <span class="chip bg-color">JDBC</span>
                     </a>
                     
                     <a href="/tags/DruidDataSource/">

@@ -5,7 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="MySQL数据库基础（中-1）, 乐乐哥">
-    <meta name="description" content="MySQL数据库基本操作2 使用聚合函数查询2.4 COUNT()函数（实例）==COUNT()函数用来统计记录的条数；与 GOUPE BY 关键字一起使用==SELECT COUNT(*) FROM t_grade;//用来统计记录的条数">
+    <meta name="description" content="MySQL数据库基本操作2 使用聚合函数查询2.4 COUNT()函数（实例）COUNT()函数用来统计记录的条数；与 GOUPE BY 关键字一起使用SELECT COUNT(*) FROM t_grade;//用来统计记录的条数
+SEL">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -445,7 +446,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2019-12-28
+                    2020-02-04
                 </div>
                 
 
@@ -475,12 +476,12 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="MySQL数据库基本操作"><a href="#MySQL数据库基本操作" class="headerlink" title="MySQL数据库基本操作"></a>MySQL数据库基本操作</h1><h4 id="2-使用聚合函数查询"><a href="#2-使用聚合函数查询" class="headerlink" title="2 使用聚合函数查询"></a>2 使用聚合函数查询</h4><h5 id="2-4-COUNT-函数（实例）-COUNT-函数用来统计记录的条数；与-GOUPE-BY-关键字一起使用"><a href="#2-4-COUNT-函数（实例）-COUNT-函数用来统计记录的条数；与-GOUPE-BY-关键字一起使用" class="headerlink" title="2.4 COUNT()函数（实例）==COUNT()函数用来统计记录的条数；与 GOUPE BY 关键字一起使用=="></a>2.4 COUNT()函数（实例）==COUNT()函数用来统计记录的条数；与 GOUPE BY 关键字一起使用==</h5><pre><code>SELECT COUNT(*) FROM t_grade;//用来统计记录的条数
+                <h1 id="MySQL数据库基本操作"><a href="#MySQL数据库基本操作" class="headerlink" title="MySQL数据库基本操作"></a>MySQL数据库基本操作</h1><h4 id="2-使用聚合函数查询"><a href="#2-使用聚合函数查询" class="headerlink" title="2 使用聚合函数查询"></a>2 使用聚合函数查询</h4><h5 id="2-4-COUNT-函数（实例）COUNT-函数用来统计记录的条数；与-GOUPE-BY-关键字一起使用"><a href="#2-4-COUNT-函数（实例）COUNT-函数用来统计记录的条数；与-GOUPE-BY-关键字一起使用" class="headerlink" title="2.4 COUNT()函数（实例）COUNT()函数用来统计记录的条数；与 GOUPE BY 关键字一起使用"></a>2.4 COUNT()函数（实例）<strong>COUNT()函数用来统计记录的条数；与 GOUPE BY 关键字一起使用</strong></h5><pre><code>SELECT COUNT(*) FROM t_grade;//用来统计记录的条数
 SELECT COUNT(*) AS total FROM t_grade;//换字段标志
-SELECT stuName,COUNT(*) FROM t_grade GROUP BY stuName;//与GROUP　BY关键字一起使用</code></pre><h5 id="2-5-SUN-函数（实例）-SUM-函数是求和函数；与-GOUPE-BY-关键字一起使用"><a href="#2-5-SUN-函数（实例）-SUM-函数是求和函数；与-GOUPE-BY-关键字一起使用" class="headerlink" title="2.5 SUN()函数（实例）==SUM()函数是求和函数；与 GOUPE BY 关键字一起使用=="></a>2.5 SUN()函数（实例）==SUM()函数是求和函数；与 GOUPE BY 关键字一起使用==</h5><pre><code>SELECT stuName,SUM(score) FROM t_grade WHERE stuName='张三';//求和函数
-SELECT stuName,SUM(score) FROM t_grade GROUP BY stuName;//与GROUP　BY关键字一起使用</code></pre><h5 id="2-6-AVG-函数（实例）-AVG-函数是求平均值的函数；与-GOUPE-BY-关键字一起使用"><a href="#2-6-AVG-函数（实例）-AVG-函数是求平均值的函数；与-GOUPE-BY-关键字一起使用" class="headerlink" title="2.6 AVG()函数（实例）==AVG()函数是求平均值的函数；与 GOUPE BY 关键字一起使用=="></a>2.6 AVG()函数（实例）==AVG()函数是求平均值的函数；与 GOUPE BY 关键字一起使用==</h5><pre><code>SELECT stuName,AVG(score) FROM t_grade WHERE stuName='###';//求平均值的函数
-SELECT stuName,AVG(score) FROM t_grade GROUP BY stuName;//与GROUP　BY关键字一起使用</code></pre><h5 id="2-7-MAX-函数（实例）-MAX-函数是求最大值的函数；与-GOUPE-BY-关键字一起使用"><a href="#2-7-MAX-函数（实例）-MAX-函数是求最大值的函数；与-GOUPE-BY-关键字一起使用" class="headerlink" title="2.7 MAX()函数（实例）==MAX()函数是求最大值的函数；与 GOUPE BY 关键字一起使用=="></a>2.7 MAX()函数（实例）==MAX()函数是求最大值的函数；与 GOUPE BY 关键字一起使用==</h5><pre><code>SELECT stuName,course,MAX(score) FROM t_grade WHERE stuName='####';//求最大值的函数
-SELECT stuName,MAX(score) FROM t_grade GROUP BY stuName;//与GROUP　BY关键字一起使用</code></pre><h5 id="2-8-MIN-函数（实例）-MIN-函数是求最小值的函数；与-GOUPE-BY-关键字一起使用"><a href="#2-8-MIN-函数（实例）-MIN-函数是求最小值的函数；与-GOUPE-BY-关键字一起使用" class="headerlink" title="2.8 MIN()函数（实例）==MIN()函数是求最小值的函数；与 GOUPE BY 关键字一起使用=="></a>2.8 MIN()函数（实例）==MIN()函数是求最小值的函数；与 GOUPE BY 关键字一起使用==</h5><pre><code>SELECT stuName,course,MIN(score) FROM t_grade WHERE stuName='####';//求最小值的函数
+SELECT stuName,COUNT(*) FROM t_grade GROUP BY stuName;//与GROUP　BY关键字一起使用</code></pre><h5 id="2-5-SUN-函数（实例）SUM-函数是求和函数；与-GOUPE-BY-关键字一起使用"><a href="#2-5-SUN-函数（实例）SUM-函数是求和函数；与-GOUPE-BY-关键字一起使用" class="headerlink" title="2.5 SUN()函数（实例）SUM()函数是求和函数；与 GOUPE BY 关键字一起使用"></a>2.5 SUN()函数（实例）<strong>SUM()函数是求和函数；与 GOUPE BY 关键字一起使用</strong></h5><pre><code>SELECT stuName,SUM(score) FROM t_grade WHERE stuName='张三';//求和函数
+SELECT stuName,SUM(score) FROM t_grade GROUP BY stuName;//与GROUP　BY关键字一起使用</code></pre><h5 id="2-6-AVG-函数（实例）AVG-函数是求平均值的函数；与-GOUPE-BY-关键字一起使用"><a href="#2-6-AVG-函数（实例）AVG-函数是求平均值的函数；与-GOUPE-BY-关键字一起使用" class="headerlink" title="2.6 AVG()函数（实例）AVG()函数是求平均值的函数；与 GOUPE BY 关键字一起使用"></a>2.6 AVG()函数（实例）<strong>AVG()函数是求平均值的函数；与 GOUPE BY 关键字一起使用</strong></h5><pre><code>SELECT stuName,AVG(score) FROM t_grade WHERE stuName='###';//求平均值的函数
+SELECT stuName,AVG(score) FROM t_grade GROUP BY stuName;//与GROUP　BY关键字一起使用</code></pre><h5 id="2-7-MAX-函数（实例）MAX-函数是求最大值的函数；与-GOUPE-BY-关键字一起使用"><a href="#2-7-MAX-函数（实例）MAX-函数是求最大值的函数；与-GOUPE-BY-关键字一起使用" class="headerlink" title="2.7 MAX()函数（实例）MAX()函数是求最大值的函数；与 GOUPE BY 关键字一起使用"></a>2.7 MAX()函数（实例）<strong>MAX()函数是求最大值的函数；与 GOUPE BY 关键字一起使用</strong></h5><pre><code>SELECT stuName,course,MAX(score) FROM t_grade WHERE stuName='####';//求最大值的函数
+SELECT stuName,MAX(score) FROM t_grade GROUP BY stuName;//与GROUP　BY关键字一起使用</code></pre><h5 id="2-8-MIN-函数（实例）MIN-函数是求最小值的函数；与-GOUPE-BY-关键字一起使用"><a href="#2-8-MIN-函数（实例）MIN-函数是求最小值的函数；与-GOUPE-BY-关键字一起使用" class="headerlink" title="2.8 MIN()函数（实例）MIN()函数是求最小值的函数；与 GOUPE BY 关键字一起使用"></a>2.8 MIN()函数（实例）<strong>MIN()函数是求最小值的函数；与 GOUPE BY 关键字一起使用</strong></h5><pre><code>SELECT stuName,course,MIN(score) FROM t_grade WHERE stuName='####';//求最小值的函数
 SELECT stuName,MIN(score) FROM t_grade GROUP BY stuName;//与GROUP　BY关键字一起使用</code></pre><h4 id="3-连接查询"><a href="#3-连接查询" class="headerlink" title="3 连接查询"></a>3 连接查询</h4><h5 id="3-1-内连接查询-实例"><a href="#3-1-内连接查询-实例" class="headerlink" title="3.1 内连接查询(实例)"></a>3.1 内连接查询(实例)</h5><pre><code>SELECT * FROM t_book,t_bookType;
 SELECT * FROM t_book,t_bookType WHERE t_book.`bookTypeId`=t_bookType.`id`;
 SELECT bookName,author,bookTypeName FROM t_book,t_bookType WHERE t_book.`bookTypeId`=t_bookType.`id`;//内连接查询，内连接查询可以查询两个或者两个以上的表</code></pre><h5 id="3-2-外连接查询（左连接）"><a href="#3-2-外连接查询（左连接）" class="headerlink" title="3.2 外连接查询（左连接）"></a>3.2 外连接查询（左连接）</h5><pre><code>SELECT tb.`bookName`,tb.`author`,tby.`bookTypeName` FROM t_book tb,t_bookType tby WHERE tb.`bookTypeId`=tby.`id`;//使用别名，推荐使用
@@ -499,7 +500,7 @@ SELECT tb.`bookName` FROM t_book tb WHERE tb.`id`=1;//给表取别名
 SELECT tb.`bookName` bName FROM t_book tb WHERE tb.`id`=1;
 SELECT tb.`bookName` AS bName FROM t_book tb WHERE tb.`id`=1;//给字段取别名</code></pre><h4 id="7-插入数据（实例）"><a href="#7-插入数据（实例）" class="headerlink" title="7 插入数据（实例）"></a>7 插入数据（实例）</h4><h5 id="7-1-给表的所有字段插入数据"><a href="#7-1-给表的所有字段插入数据" class="headerlink" title="7.1 给表的所有字段插入数据"></a>7.1 给表的所有字段插入数据</h5><pre><code>INSERT INTO t_book VALUES (NULL,'#####',20,'#####',1);//给表所有的字段插入数据
 INSERT INTO t_book(id,bookName,price,author,bookTypeId) VALUES (NULL,'####',20,'####',1);</code></pre><h5 id="7-2给表的指定字段插入数据"><a href="#7-2给表的指定字段插入数据" class="headerlink" title="7.2给表的指定字段插入数据"></a>7.2给表的指定字段插入数据</h5><pre><code>INSERT INTO t_book(bookName,author) VALUES ('####','##');//给表指定的字段插入数据</code></pre><h5 id="7-3同时插入多条记录"><a href="#7-3同时插入多条记录" class="headerlink" title="7.3同时插入多条记录"></a>7.3同时插入多条记录</h5><pre><code>INSERT INTO t_book(id,bookName,price,author,bookTypeId) VALUES (NULL,'#####',20,'##',1),(NULL,'####',20,'###,1);//同时插入多条记录</code></pre><h5 id="7-4-更新数据"><a href="#7-4-更新数据" class="headerlink" title="7.4 更新数据"></a>7.4 更新数据</h5><pre><code>UPDATE t_book SET bookName='Java编程思想',price=120 WHERE id=1;//更新数据</code></pre><h5 id="7-5-删除数据"><a href="#7-5-删除数据" class="headerlink" title="7.5 删除数据"></a>7.5 删除数据</h5><pre><code>DELETE FROM t_book WHERE id=5;
-DELETE FROM t_book WHERE bookName='我';//删除数据</code></pre><h4 id="8-索引的引入"><a href="#8-索引的引入" class="headerlink" title="8. 索引的引入"></a>8. 索引的引入</h4><p><strong>索引是对数据库表中一列或多列的值进行排序的一种结构，使用索引可快速访问数据库表中的特定信息。如果想按特定职员的姓来查找他或她，则与在表中搜索所有的行相比，索引有助于更快地获取信息。</strong><br>优点：==在信息检索过程中，若使用分组及排序子句进行时，通过建立索引能有效的减少检索过程中所需的分组及排序时间，提高检索效率。==<br>缺点：==在数据库建立过程中，需花费较多的时间去建立并维护索引，特别是随着数据总量的增加，所花费的时间将不断递增。==</p>
+DELETE FROM t_book WHERE bookName='我';//删除数据</code></pre><h4 id="8-索引的引入"><a href="#8-索引的引入" class="headerlink" title="8. 索引的引入"></a>8. 索引的引入</h4><p><strong>索引是对数据库表中一列或多列的值进行排序的一种结构，使用索引可快速访问数据库表中的特定信息。如果想按特定职员的姓来查找他或她，则与在表中搜索所有的行相比，索引有助于更快地获取信息。</strong><br>优点：<strong>在信息检索过程中，若使用分组及排序子句进行时，通过建立索引能有效的减少检索过程中所需的分组及排序时间，提高检索效率。</strong><br>缺点：<strong>在数据库建立过程中，需花费较多的时间去建立并维护索引，特别是随着数据总量的增加，所花费的时间将不断递增。</strong></p>
 <h5 id="8-1-索引分类"><a href="#8-1-索引分类" class="headerlink" title="8.1 索引分类"></a>8.1 索引分类</h5><h6 id="1）主键索引（PRIMAY-KEY）"><a href="#1）主键索引（PRIMAY-KEY）" class="headerlink" title="1）主键索引（PRIMAY KEY）"></a>1）主键索引（PRIMAY KEY）</h6><p><strong>数据库表经常有一列或多列组合，其值唯一标识表中的每一行。该列称为表的主键。在数据库关系图中为表定义主键将自动创建主键索引，主键索引是唯一索引的特定类型。该索引要求主键中的每个值都唯一。当在查询中使用主键索引时，它还允许对数据的快速访问。</strong></p>
 <h6 id="2）唯一索引（UNIQUE）"><a href="#2）唯一索引（UNIQUE）" class="headerlink" title="2）唯一索引（UNIQUE）"></a>2）唯一索引（UNIQUE）</h6><p><strong>唯一索引是不允许其中任何两行具有相同索引值的索引。当现有数据中存在重复的键值时，大多数数据库不允许将新创建的唯一索引与表一起保存。数据库还可能防止添加将在表中创建重复键值的新数据。例如，如果在employee表中职员的姓(lname)上创建了唯一索引，则任何两个员工都不能同姓。</strong></p>
 <h6 id="3）常规索引（INDEX）"><a href="#3）常规索引（INDEX）" class="headerlink" title="3）常规索引（INDEX）"></a>3）常规索引（INDEX）</h6><p><strong>可以建立在任何数据类型中</strong></p>
@@ -694,7 +695,8 @@ gitment.render('gitment-content');
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、整合最基本的JDBC1.引入最基本的jdbc和MySQL驱动依赖&lt;dependency&gt;                         //jdbc依赖            &lt;groupId&gt;org.spri
+                            一、整合最基本的JDBC1.引入最基本的jdbc和MySQL驱动依赖&lt;dependency&gt;                         //jdbc依赖
+            &lt;groupId&gt;org.spr
                         
                     </div>
                     <div class="publish-info">
@@ -724,16 +726,16 @@ gitment.render('gitment-content');
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/JDBC/">
+                        <span class="chip bg-color">JDBC</span>
+                    </a>
+                    
                     <a href="/tags/SpringBoot/">
                         <span class="chip bg-color">SpringBoot</span>
                     </a>
                     
                     <a href="/tags/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/">
                         <span class="chip bg-color">后端框架</span>
-                    </a>
-                    
-                    <a href="/tags/JDBC/">
-                        <span class="chip bg-color">JDBC</span>
                     </a>
                     
                     <a href="/tags/DruidDataSource/">
@@ -763,7 +765,7 @@ gitment.render('gitment-content');
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            MySQL基础操作1.1创建数据库create database 数据库名1.2显示数据库Show databases；1.3删除数据库Drop database 数据库名==创建表的约束条件==
+                            MySQL基础操作1.1创建数据库create database 数据库名1.2显示数据库Show databases；1.3删除数据库Drop database 数据库名创建表的约束条件
 
 
 
@@ -772,7 +774,8 @@ gitment.render('gitment-content');
 
 
 
-PRIMARY
+PRIMARYKEY
+
                         
                     </div>
                     <div class="publish-info">
