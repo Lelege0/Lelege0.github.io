@@ -28,8 +28,6 @@
             
             <tag> SpringBoot </tag>
             
-            <tag> 后端框架 </tag>
-            
             <tag> MyBatis </tag>
             
             <tag> MySql </tag>
@@ -56,16 +54,12 @@
           
           <category> SpringData JPA </category>
           
-          <category> MySql </category>
-          
       </categories>
       
       
         <tags>
             
             <tag> SpringBoot </tag>
-            
-            <tag> 后端框架 </tag>
             
             <tag> MySql </tag>
             
@@ -93,6 +87,8 @@
           
           <category> JDBC </category>
           
+          <category> MySql </category>
+          
       </categories>
       
       
@@ -101,8 +97,6 @@
             <tag> JDBC </tag>
             
             <tag> SpringBoot </tag>
-            
-            <tag> 后端框架 </tag>
             
             <tag> DruidDataSource </tag>
             
