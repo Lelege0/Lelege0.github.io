@@ -28,9 +28,9 @@
             
             <tag> SpringBoot </tag>
             
-            <tag> MySql </tag>
-            
             <tag> MyBatis </tag>
+            
+            <tag> MySql </tag>
             
         </tags>
       
@@ -61,9 +61,9 @@
             
             <tag> SpringBoot </tag>
             
-            <tag> SpringData JPA </tag>
-            
             <tag> MySql </tag>
+            
+            <tag> SpringData JPA </tag>
             
         </tags>
       
@@ -268,9 +268,9 @@
       
         <tags>
             
-            <tag> JDBC </tag>
-            
             <tag> Java </tag>
+            
+            <tag> JDBC </tag>
             
             <tag> Mysql </tag>
             
