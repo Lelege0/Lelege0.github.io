@@ -5,7 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="MySQL基础（上）, 乐乐哥">
-    <meta name="description" content="MySQL基础操作1.1创建数据库create database 数据库名1.2显示数据库Show databases；1.3删除数据库Drop database 数据库名创建表的约束条件
+    <meta name="description" content="MySQL基础操作1.1创建数据库create database 数据库名
+1.2显示数据库Show databases；
+1.3删除数据库Drop database 数据库名
+创建表的约束条件
 
 
 
@@ -14,8 +17,7 @@
 
 
 
-PRIMARYKEY
-">
+PRIMARYK">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -36,7 +38,8 @@ PRIMARYKEY
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -485,7 +488,10 @@ PRIMARYKEY
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="MySQL基础操作"><a href="#MySQL基础操作" class="headerlink" title="MySQL基础操作"></a>MySQL基础操作</h1><h5 id="1-1创建数据库"><a href="#1-1创建数据库" class="headerlink" title="1.1创建数据库"></a>1.1创建数据库</h5><pre><code>create database 数据库名</code></pre><h5 id="1-2显示数据库"><a href="#1-2显示数据库" class="headerlink" title="1.2显示数据库"></a>1.2显示数据库</h5><pre><code>Show databases；</code></pre><h5 id="1-3删除数据库"><a href="#1-3删除数据库" class="headerlink" title="1.3删除数据库"></a>1.3删除数据库</h5><pre><code>Drop database 数据库名</code></pre><p><strong>创建表的约束条件</strong></p>
+                <h1 id="MySQL基础操作"><a href="#MySQL基础操作" class="headerlink" title="MySQL基础操作"></a>MySQL基础操作</h1><h5 id="1-1创建数据库"><a href="#1-1创建数据库" class="headerlink" title="1.1创建数据库"></a>1.1创建数据库</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">database</span> 数据库名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="1-2显示数据库"><a href="#1-2显示数据库" class="headerlink" title="1.2显示数据库"></a>1.2显示数据库</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">Show</span> <span class="token keyword">databases</span>；<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="1-3删除数据库"><a href="#1-3删除数据库" class="headerlink" title="1.3删除数据库"></a>1.3删除数据库</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">Drop</span> <span class="token keyword">database</span> 数据库名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>创建表的约束条件</strong></p>
 <table>
 <thead>
 <tr>
@@ -518,33 +524,49 @@ PRIMARYKEY
 <td>为该属性设置默认值</td>
 </tr>
 </tbody></table>
-<h5 id="1-4创建表（实例）"><a href="#1-4创建表（实例）" class="headerlink" title="1.4创建表（实例）"></a>1.4创建表（实例）</h5><pre><code>CREATE TABLE t_bookType(
-              id int primary key auto_increment,
-              bookTypeName varchar(20),
-              bookTypeDesc varchar(200)
-);</code></pre><h5 id="1-5查看表结构（实例）"><a href="#1-5查看表结构（实例）" class="headerlink" title="1.5查看表结构（实例）"></a>1.5查看表结构（实例）</h5><pre><code>desc t_bookType;
-show  create table t_bookType；</code></pre><h5 id="1-6修改表（实例）"><a href="#1-6修改表（实例）" class="headerlink" title="1.6修改表（实例）"></a>1.6修改表（实例）</h5><pre><code>alter table t_book rename t_book2;//修改表名
-alter table t_book change bookName bookName2 varchar(20);//修改字段
-alter table t_book add testField int first;//在第一个位置插入一行头为testField
-alter table t_book add test int after author;//在author之后插入一行头为test
-alter table t_book drop testField;//删除一行testField</code></pre><h5 id="1-7删除表（实例）"><a href="#1-7删除表（实例）" class="headerlink" title="1.7删除表（实例）"></a>1.7删除表（实例）</h5><pre><code>drop table t_bookType;//删除一个表，只能先删除子表再删除父表</code></pre><h5 id="1-8查询所有字段（实例）"><a href="#1-8查询所有字段（实例）" class="headerlink" title="1.8查询所有字段（实例）"></a>1.8查询所有字段（实例）</h5><pre><code>SELECT id,stuName,age,sex,gradeName FROM t_student;
-SELECT * FROM t_student;//查询字段的两种方式</code></pre><h5 id="1-9查询指定字段（实例）"><a href="#1-9查询指定字段（实例）" class="headerlink" title="1.9查询指定字段（实例）"></a>1.9查询指定字段（实例）</h5><pre><code>SELECT stuName,gradeName FROM t_student;//查询指定的字段</code></pre><h5 id="1-10where条件查询（实例）"><a href="#1-10where条件查询（实例）" class="headerlink" title="1.10where条件查询（实例）"></a>1.10where条件查询（实例）</h5><pre><code>SELECT * FROM t_student WHERE id=1;
-SELECT * FROM t_student WHERE age&gt;22;//条件表达式</code></pre><h5 id="1-11带IN关键字查询（实例）"><a href="#1-11带IN关键字查询（实例）" class="headerlink" title="1.11带IN关键字查询（实例）"></a>1.11带IN关键字查询（实例）</h5><pre><code>SELECT * FROM t_student WHERE age IN (21,23);
-SELECT * FROM t_student WHERE age NOT IN (21,23);//IN的使用</code></pre><h5 id="1-12带-BETWEENAND-的范围查询（实例）"><a href="#1-12带-BETWEENAND-的范围查询（实例）" class="headerlink" title="1.12带 BETWEENAND 的范围查询（实例）"></a>1.12带 BETWEENAND 的范围查询（实例）</h5><pre><code>SELECT * FROM t_student WHERE age BETWEEN 21 AND 24;
-SELECT * FROM t_student WHERE age NOT BETWEEN 21 AND 24;//表范围</code></pre><h5 id="1-13带-LIKE-的模糊查询（实例）"><a href="#1-13带-LIKE-的模糊查询（实例）" class="headerlink" title="1.13带 LIKE 的模糊查询（实例）"></a>1.13带 LIKE 的模糊查询（实例）</h5><pre><code>SELECT * FROM t_student WHERE stuName LIKE '张三';//查询特定信息
-SELECT * FROM t_student WHERE stuName LIKE '张三%';//查询信息中最前面带有此字段的
-SELECT * FROM t_student WHERE stuName LIKE '张三__';//查询四个字中最前面有特定字符的
-SELECT * FROM t_student WHERE stuName LIKE '%张三%';//模糊查询（查询所有带特定字符的字段）</code></pre><h5 id="1-14-空值查询（实例）"><a href="#1-14-空值查询（实例）" class="headerlink" title="1.14 空值查询（实例）"></a>1.14 空值查询（实例）</h5><pre><code>SELECT * FROM t_student WHERE sex IS NULL;
-SELECT * FROM t_student WHERE sex IS NOT NULL;//查询字段为空或不空</code></pre><h5 id="1-15-带-AND或OR-的多条件查询（实例）"><a href="#1-15-带-AND或OR-的多条件查询（实例）" class="headerlink" title="1.15 带 AND或OR 的多条件查询（实例）"></a>1.15 带 AND或OR 的多条件查询（实例）</h5><pre><code>SELECT * FROM t_student WHERE gradeName='一年级' AND age=23;
-SELECT * FROM t_student WHERE gradeName='一年级' OR age=23;//多条件查询</code></pre><h5 id="1-16DISTINCT-去重复查询（实例）"><a href="#1-16DISTINCT-去重复查询（实例）" class="headerlink" title="1.16DISTINCT 去重复查询（实例）"></a>1.16DISTINCT 去重复查询（实例）</h5><pre><code>SELECT DISTINCT gradeName FROM t_student;//去重复查询</code></pre><h5 id="2-1-对查询结果排序（实例）"><a href="#2-1-对查询结果排序（实例）" class="headerlink" title="2.1 对查询结果排序（实例）"></a>2.1 对查询结果排序（实例）</h5><pre><code>SELECT * FROM t_student ORDER BY age ASC;//升序排序
-SELECT * FROM t_student ORDER BY age DESC;//降序排序（给查询信息排序）</code></pre><h5 id="2-2-GROUP-BY-分组查询（实例）"><a href="#2-2-GROUP-BY-分组查询（实例）" class="headerlink" title="2.2 GROUP BY 分组查询（实例）"></a>2.2 GROUP BY 分组查询（实例）</h5><pre><code>SELECT * FROM t_student GROUP BY gradeName;//单独使用毫无意义
-SELECT gradeName, GROUP_CONCAT(stuName) FROM t_student GROUP BY gradeName;//与GROUP_CONCAT函数一起使用
-SELECT gradeName,COUNT(stuName) FROM t_student GROUP BY gradeName;//与聚合函数一起使用 
-SELECT gradeName,COUNT(stuName) FROM t_student GROUP BY gradeName HAVING COUNT(stuName)&gt;3;//与HAVING一起使用（限制输出的结果）
-SELECT gradeName,COUNT(stuName) FROM t_student GROUP BY gradeName WITH ROLLUP;//最后加一个人总行）
-SELECT gradeName, GROUP_CONCAT(stuName) FROM t_student GROUP BY gradeName WITH ROLLUP;</code></pre><h5 id="2-3-LIMIT-分页查询（实例）"><a href="#2-3-LIMIT-分页查询（实例）" class="headerlink" title="2.3 LIMIT 分页查询（实例）"></a>2.3 LIMIT 分页查询（实例）</h5><pre><code>SELECT * FROM t_student LIMIT 0,5;
-SELECT * FROM t_student LIMIT 5,5;
-SELECT * FROM t_student LIMIT 10,5;//LIMIT分页查询</code></pre><script>
+<h5 id="1-4创建表（实例）"><a href="#1-4创建表（实例）" class="headerlink" title="1.4创建表（实例）"></a>1.4创建表（实例）</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> t_bookType<span class="token punctuation">(</span>
+    id <span class="token keyword">int</span> <span class="token keyword">primary</span> <span class="token keyword">key</span> <span class="token keyword">auto_increment</span><span class="token punctuation">,</span>
+    bookTypeName <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    bookTypeDesc <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="1-5查看表结构（实例）"><a href="#1-5查看表结构（实例）" class="headerlink" title="1.5查看表结构（实例）"></a>1.5查看表结构（实例）</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">desc</span> t_bookType<span class="token punctuation">;</span>
+<span class="token keyword">show</span>  <span class="token keyword">create</span> <span class="token keyword">table</span> t_bookType；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="1-6修改表（实例）"><a href="#1-6修改表（实例）" class="headerlink" title="1.6修改表（实例）"></a>1.6修改表（实例）</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">alter</span> <span class="token keyword">table</span> t_book <span class="token keyword">rename</span> t_book2<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//修改表名</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> t_book change bookName bookName2 <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//修改字段</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> t_book <span class="token keyword">add</span> testField <span class="token keyword">int</span> <span class="token keyword">first</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//在第一个位置插入一行头为testField</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> t_book <span class="token keyword">add</span> test <span class="token keyword">int</span> <span class="token keyword">after</span> author<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//在author之后插入一行头为test</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> t_book <span class="token keyword">drop</span> testField<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//删除一行testField</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="1-7删除表（实例）"><a href="#1-7删除表（实例）" class="headerlink" title="1.7删除表（实例）"></a>1.7删除表（实例）</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">drop</span> <span class="token keyword">table</span> t_bookType<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//删除一个表，只能先删除子表再删除父表</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="1-8查询所有字段（实例）"><a href="#1-8查询所有字段（实例）" class="headerlink" title="1.8查询所有字段（实例）"></a>1.8查询所有字段（实例）</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> id<span class="token punctuation">,</span>stuName<span class="token punctuation">,</span>age<span class="token punctuation">,</span>sex<span class="token punctuation">,</span>gradeName <span class="token keyword">FROM</span> t_student<span class="token punctuation">;</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_student<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//查询字段的两种方式</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="1-9查询指定字段（实例）"><a href="#1-9查询指定字段（实例）" class="headerlink" title="1.9查询指定字段（实例）"></a>1.9查询指定字段（实例）</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> stuName<span class="token punctuation">,</span>gradeName <span class="token keyword">FROM</span> t_student<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//查询指定的字段</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="1-10where条件查询（实例）"><a href="#1-10where条件查询（实例）" class="headerlink" title="1.10where条件查询（实例）"></a>1.10where条件查询（实例）</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">WHERE</span> id<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">WHERE</span> age<span class="token operator">></span><span class="token number">22</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//条件表达式</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="1-11带IN关键字查询（实例）"><a href="#1-11带IN关键字查询（实例）" class="headerlink" title="1.11带IN关键字查询（实例）"></a>1.11带IN关键字查询（实例）</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">WHERE</span> age <span class="token operator">IN</span> <span class="token punctuation">(</span><span class="token number">21</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">WHERE</span> age <span class="token operator">NOT</span> <span class="token operator">IN</span> <span class="token punctuation">(</span><span class="token number">21</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//IN的使用</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="1-12带-BETWEENAND-的范围查询（实例）"><a href="#1-12带-BETWEENAND-的范围查询（实例）" class="headerlink" title="1.12带 BETWEENAND 的范围查询（实例）"></a>1.12带 BETWEENAND 的范围查询（实例）</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">WHERE</span> age <span class="token operator">BETWEEN</span> <span class="token number">21</span> <span class="token operator">AND</span> <span class="token number">24</span><span class="token punctuation">;</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">WHERE</span> age <span class="token operator">NOT</span> <span class="token operator">BETWEEN</span> <span class="token number">21</span> <span class="token operator">AND</span> <span class="token number">24</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//表范围</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="1-13带-LIKE-的模糊查询（实例）"><a href="#1-13带-LIKE-的模糊查询（实例）" class="headerlink" title="1.13带 LIKE 的模糊查询（实例）"></a>1.13带 LIKE 的模糊查询（实例）</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">WHERE</span> stuName <span class="token operator">LIKE</span> <span class="token string">'张三'</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//查询特定信息</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">WHERE</span> stuName <span class="token operator">LIKE</span> <span class="token string">'张三%'</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//查询信息中最前面带有此字段的</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">WHERE</span> stuName <span class="token operator">LIKE</span> <span class="token string">'张三__'</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//查询四个字中最前面有特定字符的</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">WHERE</span> stuName <span class="token operator">LIKE</span> <span class="token string">'%张三%'</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//模糊查询（查询所有带特定字符的字段）</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="1-14-空值查询（实例）"><a href="#1-14-空值查询（实例）" class="headerlink" title="1.14 空值查询（实例）"></a>1.14 空值查询（实例）</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">WHERE</span> sex <span class="token operator">IS</span> <span class="token boolean">NULL</span><span class="token punctuation">;</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">WHERE</span> sex <span class="token operator">IS</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//查询字段为空或不空</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="1-15-带-AND或OR-的多条件查询（实例）"><a href="#1-15-带-AND或OR-的多条件查询（实例）" class="headerlink" title="1.15 带 AND或OR 的多条件查询（实例）"></a>1.15 带 AND或OR 的多条件查询（实例）</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">WHERE</span> gradeName<span class="token operator">=</span><span class="token string">'一年级'</span> <span class="token operator">AND</span> age<span class="token operator">=</span><span class="token number">23</span><span class="token punctuation">;</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">WHERE</span> gradeName<span class="token operator">=</span><span class="token string">'一年级'</span> <span class="token operator">OR</span> age<span class="token operator">=</span><span class="token number">23</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//多条件查询</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="1-16DISTINCT-去重复查询（实例）"><a href="#1-16DISTINCT-去重复查询（实例）" class="headerlink" title="1.16DISTINCT 去重复查询（实例）"></a>1.16DISTINCT 去重复查询（实例）</h5><pre class="line-numbers language-sql"><code class="language-sql">   <span class="token keyword">SELECT</span> <span class="token keyword">DISTINCT</span> gradeName <span class="token keyword">FROM</span> t_student<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//去重复查询</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="2-1-对查询结果排序（实例）"><a href="#2-1-对查询结果排序（实例）" class="headerlink" title="2.1 对查询结果排序（实例）"></a>2.1 对查询结果排序（实例）</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> age <span class="token keyword">ASC</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//升序排序</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> age <span class="token keyword">DESC</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//降序排序（给查询信息排序）</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="2-2-GROUP-BY-分组查询（实例）"><a href="#2-2-GROUP-BY-分组查询（实例）" class="headerlink" title="2.2 GROUP BY 分组查询（实例）"></a>2.2 GROUP BY 分组查询（实例）</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> gradeName<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//单独使用毫无意义</span>
+<span class="token keyword">SELECT</span> gradeName<span class="token punctuation">,</span> GROUP_CONCAT<span class="token punctuation">(</span>stuName<span class="token punctuation">)</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> gradeName<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//与GROUP_CONCAT函数一起使用</span>
+<span class="token keyword">SELECT</span> gradeName<span class="token punctuation">,</span><span class="token function">COUNT</span><span class="token punctuation">(</span>stuName<span class="token punctuation">)</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> gradeName<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//与聚合函数一起使用 </span>
+<span class="token keyword">SELECT</span> gradeName<span class="token punctuation">,</span><span class="token function">COUNT</span><span class="token punctuation">(</span>stuName<span class="token punctuation">)</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> gradeName <span class="token keyword">HAVING</span> <span class="token function">COUNT</span><span class="token punctuation">(</span>stuName<span class="token punctuation">)</span><span class="token operator">></span><span class="token number">3</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//与HAVING一起使用（限制输出的结果）</span>
+<span class="token keyword">SELECT</span> gradeName<span class="token punctuation">,</span><span class="token function">COUNT</span><span class="token punctuation">(</span>stuName<span class="token punctuation">)</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> gradeName <span class="token keyword">WITH ROLLUP</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//最后加一个人总行）</span>
+<span class="token keyword">SELECT</span> gradeName<span class="token punctuation">,</span> GROUP_CONCAT<span class="token punctuation">(</span>stuName<span class="token punctuation">)</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">GROUP</span> <span class="token keyword">BY</span> gradeName <span class="token keyword">WITH ROLLUP</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="2-3-LIMIT-分页查询（实例）"><a href="#2-3-LIMIT-分页查询（实例）" class="headerlink" title="2.3 LIMIT 分页查询（实例）"></a>2.3 LIMIT 分页查询（实例）</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">LIMIT</span> <span class="token number">0</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">LIMIT</span> <span class="token number">5</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">;</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_student <span class="token keyword">LIMIT</span> <span class="token number">10</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//LIMIT分页查询</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -776,9 +798,9 @@ SEL
                     <div class="summary block-with-text">
                         
                             css中margin元素塌陷 继承结构的元素，水平与垂直结构上的margin取其最大值
-&lt;div class="box"&gt;
-    &lt;div class="dad"&gt;
-        &lt;div class="s
+    &lt;div class="box">
+        &lt;div class="dad">
+            &lt;div cl
                         
                     </div>
                     <div class="publish-info">
@@ -955,7 +977,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">10.9k</span>&nbsp;字
+                class="white-color">10.8k</span>&nbsp;字
             
             
             

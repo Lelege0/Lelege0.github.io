@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta name="keywords" content="css中margin元素塌陷问题, 乐乐哥">
     <meta name="description" content="css中margin元素塌陷 继承结构的元素，水平与垂直结构上的margin取其最大值
-&amp;lt;div class=&#34;box&#34;&amp;gt;
-    &amp;lt;div class=&#34;dad&#34;&amp;gt;
-        &amp;lt;div class=&#34;s">
+    &amp;lt;div class=&#34;box&#34;&gt;
+        &amp;lt;div class=&#34;dad&#34;&gt;
+            &amp;lt;div cl">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -29,7 +29,8 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -444,14 +445,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2019-12-13
+                    2020-02-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    337
+                    331
                 </div>
                 
 
@@ -475,30 +476,30 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="css中margin元素塌陷"><a href="#css中margin元素塌陷" class="headerlink" title="css中margin元素塌陷"></a>css中margin元素塌陷</h1><p> <em>继承结构的元素，水平与垂直结构上的margin取其最大值</em></p>
-<pre><code>&lt;div class="box"&gt;
-    &lt;div class="dad"&gt;
-        &lt;div class="son"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</code></pre><br>
-
-<pre><code>.box{
-    width: 300px;
-    height: 300px;
-}
-.dad{
-    width: 100px;
-    height: 100px;
-    background: #000;
-    margin-top: 50px;
-    margin-left: 50px;
-}
-.son{
-    margin-left: 100px;
-    /*margin-top: 100px;*/
-    width: 50px;
-    height: 50px;
-    background: blue;
-    }</code></pre><h5 id="根据上述代码先把margin-top注释掉-效果"><a href="#根据上述代码先把margin-top注释掉-效果" class="headerlink" title="根据上述代码先把margin-top注释掉(效果)"></a>根据上述代码先把margin-top注释掉(效果)</h5><p><img src="https://img-blog.csdnimg.cn/20191006205815838.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="注释之后的效果"><br>我们的蓝色方块根据黑色方块向左移动了100px，很正常，但是当我们将注释的代码打开的时候，根据上面的经验我们预测应该看到的是蓝色的方块到了黑色的方块的右下角<br><img src="https://img-blog.csdnimg.cn/20191006210542161.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="代码取消注释之后"><br>我们可以看到他并没有你找我们预想的那样，蓝色的移动到黑色的右下角，而是黑色的跟着蓝色的下移了50px，当然这就是margin的塌陷问题了，就是这个box好像不能作为dad移动的参照物了，这就是取名为margin塌陷的原因。==在水平和垂直方向上谁大取谁的而且是相对于承载这个元素的元素==</p>
+<pre class="line-numbers language-css"><code class="language-css">    &lt;div class=<span class="token string">"box"</span>>
+        &lt;div class=<span class="token string">"dad"</span>>
+            &lt;div class=<span class="token string">"son"</span>>&lt;/div>
+        &lt;/div>
+    &lt;/div><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.box</span></span><span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">300</span>px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">300</span>px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.dad</span></span><span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode">#000</span><span class="token punctuation">;</span>
+    <span class="token property">margin-top</span><span class="token punctuation">:</span> <span class="token number">50</span>px<span class="token punctuation">;</span>
+    <span class="token property">margin-left</span><span class="token punctuation">:</span> <span class="token number">50</span>px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.son</span></span><span class="token punctuation">{</span>
+    <span class="token property">margin-left</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/*margin-top: 100px;*/</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">50</span>px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">50</span>px<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="根据上述代码先把margin-top注释掉-效果"><a href="#根据上述代码先把margin-top注释掉-效果" class="headerlink" title="根据上述代码先把margin-top注释掉(效果)"></a>根据上述代码先把margin-top注释掉(效果)</h5><p><img src="https://img-blog.csdnimg.cn/20191006205815838.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="注释之后的效果"><br>我们的蓝色方块根据黑色方块向左移动了100px，很正常，但是当我们将注释的代码打开的时候，根据上面的经验我们预测应该看到的是蓝色的方块到了黑色的方块的右下角<br><img src="https://img-blog.csdnimg.cn/20191006210542161.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="代码取消注释之后"><br>我们可以看到他并没有你找我们预想的那样，蓝色的移动到黑色的右下角，而是黑色的跟着蓝色的下移了50px，当然这就是margin的塌陷问题了，就是这个box好像不能作为dad移动的参照物了，这就是取名为margin塌陷的原因。==在水平和垂直方向上谁大取谁的而且是相对于承载这个元素的元素==</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -668,7 +669,10 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            MySQL基础操作1.1创建数据库create database 数据库名1.2显示数据库Show databases；1.3删除数据库Drop database 数据库名创建表的约束条件
+                            MySQL基础操作1.1创建数据库create database 数据库名
+1.2显示数据库Show databases；
+1.3删除数据库Drop database 数据库名
+创建表的约束条件
 
 
 
@@ -677,8 +681,7 @@
 
 
 
-PRIMARYKEY
-
+PRIMARYK
                         
                     </div>
                     <div class="publish-info">
@@ -912,7 +915,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">10.9k</span>&nbsp;字
+                class="white-color">10.8k</span>&nbsp;字
             
             
             

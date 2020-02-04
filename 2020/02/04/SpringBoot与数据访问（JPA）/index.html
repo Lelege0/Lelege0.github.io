@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta name="keywords" content="SpringBoot与数据访问（JPA）, 乐乐哥">
     <meta name="description" content="四、整合SpringData JPA操作数据库1.引入JPA依赖JPA：ORM(Object Relational Mapping)
-&amp;lt;dependency&amp;gt;
-            &amp;lt;groupId&amp;gt;org.spr">
+    &amp;lt;dependency&gt;
+                &amp;lt;groupId&gt;org.s">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -28,7 +28,8 @@
     
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -462,7 +463,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    813
+                    808
                 </div>
                 
 
@@ -486,102 +487,108 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="四、整合SpringData-JPA操作数据库"><a href="#四、整合SpringData-JPA操作数据库" class="headerlink" title="四、整合SpringData JPA操作数据库"></a>四、整合SpringData JPA操作数据库</h2><h6 id="1-引入JPA依赖"><a href="#1-引入JPA依赖" class="headerlink" title="1.引入JPA依赖"></a>1.引入JPA依赖</h6><p>JPA：ORM(Object Relational Mapping)</p>
-<pre><code>&lt;dependency&gt;
-            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;
-&lt;/dependency&gt;</code></pre><p><strong>依赖关系图</strong><br><img src="https://img-blog.csdnimg.cn/20200203121303179.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="JPA依赖关系图"><br><strong>配置数据源</strong></p>
-<pre><code>spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/jpa
-    username: root
-    password: 1234567890
-    driver-class-name: com.mysql.jdbc.Driver</code></pre><h6 id="2-编写一个实体类（bean）和数据表进行映射，并且配置好映射关系；"><a href="#2-编写一个实体类（bean）和数据表进行映射，并且配置好映射关系；" class="headerlink" title="2.编写一个实体类（bean）和数据表进行映射，并且配置好映射关系；"></a>2.编写一个实体类（bean）和数据表进行映射，并且配置好映射关系；</h6><pre><code>package com.atorg.springboot.entity;
+<pre class="line-numbers language-xml"><code class="language-xml">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-data-jpa<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>依赖关系图</strong><br><img src="https://img-blog.csdnimg.cn/20200203121303179.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="JPA依赖关系图"><br><strong>配置数据源</strong></p>
+<pre class="line-numbers language-yaml"><code class="language-yaml">    <span class="token key atrule">spring</span><span class="token punctuation">:</span>
+      <span class="token key atrule">datasource</span><span class="token punctuation">:</span>
+        <span class="token key atrule">url</span><span class="token punctuation">:</span> jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span>3306/jpa
+        <span class="token key atrule">username</span><span class="token punctuation">:</span> root
+        <span class="token key atrule">password</span><span class="token punctuation">:</span> <span class="token number">1234567890</span>
+        <span class="token key atrule">driver-class-name</span><span class="token punctuation">:</span> com.mysql.jdbc.Driver<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="2-编写一个实体类（bean）和数据表进行映射，并且配置好映射关系；"><a href="#2-编写一个实体类（bean）和数据表进行映射，并且配置好映射关系；" class="headerlink" title="2.编写一个实体类（bean）和数据表进行映射，并且配置好映射关系；"></a>2.编写一个实体类（bean）和数据表进行映射，并且配置好映射关系；</h6><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atorg<span class="token punctuation">.</span>springboot<span class="token punctuation">.</span>entity<span class="token punctuation">;</span>
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import javax.persistence.*;
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>fasterxml<span class="token punctuation">.</span>jackson<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>JsonIgnoreProperties<span class="token punctuation">;</span>
+<span class="token keyword">import</span> javax<span class="token punctuation">.</span>persistence<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
 
-//配置映射关系，使用jpa注解
-//@JsonIgnoreProperties(value = {"hibernateLazyInitializer"})
-@Entity     //告诉JPA这是一个实体类（和数据表映射的类）
-@Table(name="tb1_user")  //使用@Table来指定和那个数据表对应;如果省略默认表名就是user
-public class User {
+<span class="token comment" spellcheck="true">//配置映射关系，使用jpa注解</span>
+<span class="token comment" spellcheck="true">//@JsonIgnoreProperties(value = {"hibernateLazyInitializer"})</span>
+<span class="token annotation punctuation">@Entity</span>     <span class="token comment" spellcheck="true">//告诉JPA这是一个实体类（和数据表映射的类）</span>
+<span class="token annotation punctuation">@Table</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"tb1_user"</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//使用@Table来指定和那个数据表对应;如果省略默认表名就是user</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
 
-    @Id            ///这是一个主键
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //表示主键自增
-    private Integer id;
+    <span class="token annotation punctuation">@Id</span>            <span class="token comment" spellcheck="true">///这是一个主键</span>
+    <span class="token annotation punctuation">@GeneratedValue</span><span class="token punctuation">(</span>strategy <span class="token operator">=</span> GenerationType<span class="token punctuation">.</span>IDENTITY<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//表示主键自增</span>
+    <span class="token keyword">private</span> Integer id<span class="token punctuation">;</span>
 
-    @Column(name = "last_name",length = 50)  //这是和数据表队对应的一个列
-    private String lastName;
-    @Column             //省略默认列名就是属性名
-    private String email;
+    <span class="token annotation punctuation">@Column</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"last_name"</span><span class="token punctuation">,</span>length <span class="token operator">=</span> <span class="token number">50</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//这是和数据表队对应的一个列</span>
+    <span class="token keyword">private</span> String lastName<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Column</span>             <span class="token comment" spellcheck="true">//省略默认列名就是属性名</span>
+    <span class="token keyword">private</span> String email<span class="token punctuation">;</span>
 
-    public Integer getId() {
-        return id;
-    }
+    <span class="token keyword">public</span> Integer <span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> id<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setId</span><span class="token punctuation">(</span>Integer id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public String getLastName() {
-        return lastName;
-    }
+    <span class="token keyword">public</span> String <span class="token function">getLastName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> lastName<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setLastName</span><span class="token punctuation">(</span>String lastName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>lastName <span class="token operator">=</span> lastName<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public String getEmail() {
-        return email;
-    }
+    <span class="token keyword">public</span> String <span class="token function">getEmail</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> email<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-}</code></pre><p><strong>@Entity:告诉JPA这是一个实体类,和数据表映射类;<br>**@Table(name=”tb1_user”)  :使用@Table来指定和那个数据表对应;如果省略默认表名就是类名小写即对应此表为user；</strong><br><strong>@Id：这是一个主键</strong><br><strong>@GeneratedValue(strategy = GenerationType.IDENTITY) ：表示主键自增；@Column(name = “last_name”,length = 50):表示这是和数据表队对应的一个列,可以自定义列名和长度，如果省略默认列名就是属性名</strong></p>
-<h6 id="3-编写一个Dao接口来操作实体类对应的数据表（Repository）"><a href="#3-编写一个Dao接口来操作实体类对应的数据表（Repository）" class="headerlink" title="3.编写一个Dao接口来操作实体类对应的数据表（Repository）"></a>3.编写一个Dao接口来操作实体类对应的数据表（Repository）</h6><pre><code>package com.atorg.springboot.repository;
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setEmail</span><span class="token punctuation">(</span>String email<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>email <span class="token operator">=</span> email<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>@Entity:告诉JPA这是一个实体类,和数据表映射类;<br>**@Table(name=”tb1_user”)  :使用@Table来指定和那个数据表对应;如果省略默认表名就是类名小写即对应此表为user；</strong><br><strong>@Id：这是一个主键</strong><br><strong>@GeneratedValue(strategy = GenerationType.IDENTITY) ：表示主键自增；@Column(name = “last_name”,length = 50):表示这是和数据表队对应的一个列,可以自定义列名和长度，如果省略默认列名就是属性名</strong></p>
+<h6 id="3-编写一个Dao接口来操作实体类对应的数据表（Repository）"><a href="#3-编写一个Dao接口来操作实体类对应的数据表（Repository）" class="headerlink" title="3.编写一个Dao接口来操作实体类对应的数据表（Repository）"></a>3.编写一个Dao接口来操作实体类对应的数据表（Repository）</h6><pre class="line-numbers language-java"><code class="language-java">    <span class="token keyword">package</span> com<span class="token punctuation">.</span>atorg<span class="token punctuation">.</span>springboot<span class="token punctuation">.</span>repository<span class="token punctuation">;</span>
 
-import com.atorg.springboot.entity.User;
-import org.springframework.data.jpa.repository.JpaRepository;
+    <span class="token keyword">import</span> com<span class="token punctuation">.</span>atorg<span class="token punctuation">.</span>springboot<span class="token punctuation">.</span>entity<span class="token punctuation">.</span>User<span class="token punctuation">;</span>
+    <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>data<span class="token punctuation">.</span>jpa<span class="token punctuation">.</span>repository<span class="token punctuation">.</span>JpaRepository<span class="token punctuation">;</span>
 
-//继承JpaRepository来完成对数据库的操作
-public interface UserRepository extends JpaRepository&lt;User,Integer&gt; {
-}</code></pre><p><strong>此外还得对jpa进行基本的配置</strong>参考<strong>JpaRepository</strong></p>
-<pre><code>spring: 
-  jpa:
-    hibernate:
-#      更新或者创建数据表结构(如果没有实体类中的数据表时将自动创建，如果存在将自动更新数据)
-      ddl-auto: update
-#      控制台显示sql
-    show-sql: true</code></pre><p><strong>jpa.hibernate.ddl-auto: update  //更新或者创建数据表结构(如果没有实体类中的数据表时将自动创建，如果存在将自动更新数据)</strong><br>可以有下图看到默认的数据池是<strong>HikariPool</strong><br><img src="https://img-blog.csdnimg.cn/20200203172839832.png" alt="成功创建数据表"><br>数据库成功创建数据表<br><img src="https://img-blog.csdnimg.cn/20200203172925207.png" alt="数据库成功添加数据表"></p>
-<h6 id="4-编写Controller进行测试"><a href="#4-编写Controller进行测试" class="headerlink" title="4.编写Controller进行测试"></a>4.编写Controller进行测试</h6><pre><code>package com.atorg.springboot.controller;
+    <span class="token comment" spellcheck="true">//继承JpaRepository来完成对数据库的操作</span>
+    <span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserRepository</span> <span class="token keyword">extends</span> <span class="token class-name">JpaRepository</span><span class="token operator">&lt;</span>User<span class="token punctuation">,</span>Integer<span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>此外还得对jpa进行基本的配置</strong>参考<strong>JpaRepository</strong></p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">spring</span><span class="token punctuation">:</span> 
+  <span class="token key atrule">jpa</span><span class="token punctuation">:</span>
+     <span class="token key atrule">hibernate</span><span class="token punctuation">:</span>
+<span class="token comment" spellcheck="true">#      更新或者创建数据表结构(如果没有实体类中的数据表时将自动创建，如果存在将自动更新数据)</span>
+       <span class="token key atrule">ddl-auto</span><span class="token punctuation">:</span> update
+<span class="token comment" spellcheck="true">#      控制台显示sql</span>
+       <span class="token key atrule">show-sql</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>jpa.hibernate.ddl-auto: update  //更新或者创建数据表结构(如果没有实体类中的数据表时将自动创建，如果存在将自动更新数据)</strong><br>可以有下图看到默认的数据池是<strong>HikariPool</strong><br><img src="https://img-blog.csdnimg.cn/20200203172839832.png" alt="成功创建数据表"><br>数据库成功创建数据表<br><img src="https://img-blog.csdnimg.cn/20200203172925207.png" alt="数据库成功添加数据表"></p>
+<h6 id="4-编写Controller进行测试"><a href="#4-编写Controller进行测试" class="headerlink" title="4.编写Controller进行测试"></a>4.编写Controller进行测试</h6><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atorg<span class="token punctuation">.</span>springboot<span class="token punctuation">.</span>controller<span class="token punctuation">;</span>
 
-import com.atorg.springboot.entity.User;
-import com.atorg.springboot.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>atorg<span class="token punctuation">.</span>springboot<span class="token punctuation">.</span>entity<span class="token punctuation">.</span>User<span class="token punctuation">;</span>
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>atorg<span class="token punctuation">.</span>springboot<span class="token punctuation">.</span>repository<span class="token punctuation">.</span>UserRepository<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Autowired<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>GetMapping<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>PathVariable<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>RestController<span class="token punctuation">;</span>
 
-import java.util.Optional;
-@RestController
-public class UserController {
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Optional<span class="token punctuation">;</span>
+<span class="token annotation punctuation">@RestController</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserController</span> <span class="token punctuation">{</span>
 
-    @Autowired
-    UserRepository userRepository;
-    //查询数据
-    @GetMapping("/user/{id}")
-    public User getUser(@PathVariable("id") Integer id){
-        User user = userRepository.findById(id).orElse(null);
-        return user;
-    }
-    //插入数据
-    @GetMapping("/user")
-    public User insertUser(User user ){
-        User save=userRepository.save(user);
-        return save;
-    }
-}</code></pre><p><strong>findById(id)，save()</strong> 这两个方法是UserRepository 因为<strong>继承JpaRepository在JpaRepository封装了操作数据库的所有方法</strong><br><strong>发送查询请求</strong><br><img src="https://img-blog.csdnimg.cn/20200203173651893.png" alt="在这里插入图片描述"><br><strong>控制台生成sql语句</strong><br><img src="https://img-blog.csdnimg.cn/20200203173618122.png" alt="在控制台生成的sql语句"><br><strong>发送插入数据请求</strong><br><img src="https://img-blog.csdnimg.cn/20200203173923542.png" alt="插入数据"><br><strong>控制台生成的sql语句</strong><br><img src="https://img-blog.csdnimg.cn/20200203174000360.png" alt="控制台生成的sql语句"><br><strong>数据库数据表的信息增加</strong><br><img src="https://img-blog.csdnimg.cn/20200203174054318.png" alt="数据库数据表的信息增加"></p>
+    <span class="token annotation punctuation">@Autowired</span>
+    UserRepository userRepository<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//查询数据</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/user/{id}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> User <span class="token function">getUser</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span> Integer id<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        User user <span class="token operator">=</span> userRepository<span class="token punctuation">.</span><span class="token function">findById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">orElse</span><span class="token punctuation">(</span>null<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> user<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">//插入数据</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/user"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> User <span class="token function">insertUser</span><span class="token punctuation">(</span>User user <span class="token punctuation">)</span><span class="token punctuation">{</span>
+        User save<span class="token operator">=</span>userRepository<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> save<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>findById(id)，save()</strong> 这两个方法是UserRepository 因为<strong>继承JpaRepository在JpaRepository封装了操作数据库的所有方法</strong><br><strong>发送查询请求</strong><br><img src="https://img-blog.csdnimg.cn/20200203173651893.png" alt="在这里插入图片描述"><br><strong>控制台生成sql语句</strong><br><img src="https://img-blog.csdnimg.cn/20200203173618122.png" alt="在控制台生成的sql语句"><br><strong>发送插入数据请求</strong><br><img src="https://img-blog.csdnimg.cn/20200203173923542.png" alt="插入数据"><br><strong>控制台生成的sql语句</strong><br><img src="https://img-blog.csdnimg.cn/20200203174000360.png" alt="控制台生成的sql语句"><br><strong>数据库数据表的信息增加</strong><br><img src="https://img-blog.csdnimg.cn/20200203174054318.png" alt="数据库数据表的信息增加"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -755,8 +762,8 @@ public class UserController {
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            三、整合MyBatis1.引入mybatis-starter(mybatis-spring-boot-starter)依赖&lt;dependency&gt;
-            &lt;groupId&gt;org.mybatis.s
+                            三、整合MyBatis1.引入mybatis-starter(mybatis-spring-boot-starter)依赖&lt;dependency>
+        &lt;groupId>org.mybatis.spring.boot
                         
                     </div>
                     <div class="publish-info">
@@ -825,8 +832,8 @@ public class UserController {
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、整合最基本的JDBC1.引入最基本的jdbc和MySQL驱动依赖&lt;dependency&gt;                         //jdbc依赖
-            &lt;groupId&gt;org.spr
+                            一、整合最基本的JDBC1.引入最基本的jdbc和MySQL驱动依赖&lt;dependency>                         //jdbc依赖
+        &lt;groupId>org.springframewo
                         
                     </div>
                     <div class="publish-info">
@@ -1019,7 +1026,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">10.9k</span>&nbsp;字
+                class="white-color">10.8k</span>&nbsp;字
             
             
             
