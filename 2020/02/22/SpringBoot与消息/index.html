@@ -4,10 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SpringBoot与数据访问（JPA）, 乐乐哥">
-    <meta name="description" content="四、整合SpringData JPA操作数据库1.引入JPA依赖JPA：ORM(Object Relational Mapping)
-    &amp;lt;dependency&gt;
-                &amp;lt;groupId&gt;org.s">
+    <meta name="keywords" content="SpringBoot与消息, 乐乐哥">
+    <meta name="description" content="一、概述1、在大多数应用中，我们系统之间需要进行异步通信，即异步消息2、异步消息中两个重要概念：        消息代理（message broker）和目的地（destination）消息代理： 是一种在数据源与目的地之间移动数据使信息处">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>SpringBoot与数据访问（JPA） | 乐乐哥</title>
+    <title>SpringBoot与消息 | 乐乐哥</title>
     <link rel="icon" type="image/png" href="/favicon2.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -284,13 +282,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        SpringBoot与数据访问（JPA）
+                        SpringBoot与消息
                     </div>
                 </div>
             </div>
@@ -412,12 +410,8 @@
                                 <span class="chip bg-color">SpringBoot</span>
                             </a>
                         
-                            <a href="/tags/SpringData-JPA/">
-                                <span class="chip bg-color">SpringData JPA</span>
-                            </a>
-                        
-                            <a href="/tags/MySql/">
-                                <span class="chip bg-color">MySql</span>
+                            <a href="/tags/%E6%B6%88%E6%81%AF/">
+                                <span class="chip bg-color">消息</span>
                             </a>
                         
                     </div>
@@ -432,12 +426,8 @@
                                 Java
                             </a>
                         
-                            <a href="/categories/Java/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                后端
-                            </a>
-                        
-                            <a href="/categories/Java/%E5%90%8E%E7%AB%AF/SpringData-JPA/" class="post-category">
-                                SpringData JPA
+                            <a href="/categories/Java/RabbitMQ/" class="post-category">
+                                RabbitMQ
                             </a>
                         
                     </div>
@@ -449,28 +439,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-04
+                    2020-02-22
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-02-04
+                    2020-02-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    808
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    3 Min
+                    7 Min
                 </div>
                 
 				
@@ -486,109 +476,142 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="四、整合SpringData-JPA操作数据库"><a href="#四、整合SpringData-JPA操作数据库" class="headerlink" title="四、整合SpringData JPA操作数据库"></a>四、整合SpringData JPA操作数据库</h2><h6 id="1-引入JPA依赖"><a href="#1-引入JPA依赖" class="headerlink" title="1.引入JPA依赖"></a>1.引入JPA依赖</h6><p>JPA：ORM(Object Relational Mapping)</p>
-<pre class="line-numbers language-xml"><code class="language-xml">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-data-jpa<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>依赖关系图</strong><br><img src="https://img-blog.csdnimg.cn/20200203121303179.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="JPA依赖关系图"><br><strong>配置数据源</strong></p>
-<pre class="line-numbers language-yaml"><code class="language-yaml">    <span class="token key atrule">spring</span><span class="token punctuation">:</span>
-      <span class="token key atrule">datasource</span><span class="token punctuation">:</span>
-        <span class="token key atrule">url</span><span class="token punctuation">:</span> jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span>3306/jpa
-        <span class="token key atrule">username</span><span class="token punctuation">:</span> root
-        <span class="token key atrule">password</span><span class="token punctuation">:</span> <span class="token number">1234567890</span>
-        <span class="token key atrule">driver-class-name</span><span class="token punctuation">:</span> com.mysql.jdbc.Driver<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h6 id="2-编写一个实体类（bean）和数据表进行映射，并且配置好映射关系；"><a href="#2-编写一个实体类（bean）和数据表进行映射，并且配置好映射关系；" class="headerlink" title="2.编写一个实体类（bean）和数据表进行映射，并且配置好映射关系；"></a>2.编写一个实体类（bean）和数据表进行映射，并且配置好映射关系；</h6><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atorg<span class="token punctuation">.</span>springboot<span class="token punctuation">.</span>entity<span class="token punctuation">;</span>
+                <h4 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h4><p>1、在大多数应用中，我们系统之间需要进行异步通信，即异步消息<img src="https://img-blog.csdnimg.cn/20200222103334968.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="异步消息回调机制"><br>2、异步消息中两个重要概念：<br>        消息代理（message broker）和目的地（destination）<br><strong>消息代理：</strong> 是一种在数据源与目的地之间移动数据使信息处理流畅的软件技术，也是一种架构模式，用于消息验证、变换、路由。<br><strong>目的地：</strong> 消息接受者。<br><em>当消息发送者发送消息以后，将由消息代理接管，消息代理保证消息传递到指定目的地。</em><br>3、异步消息主要有两种形式(point-to-point)</p>
+<ul>
+<li><p>1）、队列（queue）：点对点消息通信</p>
+<ul>
+<li>消息发送者发送消息，消息代理将其放入一个队列中，消息接收者从队列中获取消息内容，消息读取后被移出队列</li>
+<li><strong>消息只有唯一的发送者和接收者，但并不是说只能有一个接收者。</strong></li>
+</ul>
+</li>
+<li><p>2）、主题（topic）：发布（publish）/订阅（subscribe）消息通信</p>
+<ul>
+<li><strong>发送者（发布者）发送消息到主题，多个接收者（订阅者）监听（订阅）这个主题</strong>，那么就会在消息到达时同时收到消息。</li>
+</ul>
+</li>
+</ul>
+<p>4、JMS(Java Message Service) java消息服务<br>基于JVM消息代理的规范。ActiveMQ、HornetMQ是JMS的实现<br>5、AMQP（Advanced Message Queuing Protocol）</p>
+<ul>
+<li>高级消息队列协议，也是一个消息代理的规范，<strong>兼容JMS</strong></li>
+<li>RabbitMQ是AMQP的实现</li>
+</ul>
+<h4 id="二、SpringBoot整合RabbitMQ"><a href="#二、SpringBoot整合RabbitMQ" class="headerlink" title="二、SpringBoot整合RabbitMQ"></a>二、SpringBoot整合RabbitMQ</h4><p>RabbitMQ简介：RabbitMQ是实现了高级消息队列协议（AMQP）的开源消息代理软件（亦称面向消息的中间件），<em><strong>RabbitMQ是AMQP的一个开源实现</strong>_。<br>_核心概念：</em><br><strong>Producer&amp;Consumer</strong></p>
+<ul>
+<li>producer指的是消息的生产者，consumer消息的消费者。 </li>
+</ul>
+<p><strong>Broker</strong></p>
+<ul>
+<li>提供一种传输服务，他的角色就是维护一条从生产者到消费者的路线，保证数据能按照指定的方式进行传输。</li>
+</ul>
+<p><strong>Queue</strong></p>
+<ul>
+<li>消息队列，提供了FIFO的处理机制，具有缓存消息的能力。rabbitmq中，队列消息可以设置为持久化，临时或者自动删除。</li>
+<li>设置为持久化队列，queue中的消息会在server本地硬盘存储一份，防止系统crash，数据丢失。</li>
+<li>设置为临时队列，queue中的数据在系统重启之后就会丢失。</li>
+<li>设置为自动删除的队列，当不存在用户连接到server，队列中的数据会被自动删除。</li>
+</ul>
+<p><strong>Exchange</strong></p>
+<ul>
+<li>消息交换机，指定消息按什么规则，路由到那个队列。</li>
+<li>Exchange有4中类型：direct（默认），fanout，topic和headers，不同类型的Exchange转发消息的策略有所区别：</li>
+</ul>
+<p><strong>Binding</strong></p>
+<ul>
+<li>将一个特定的Exchange和一个特定的Queue绑定起来。</li>
+<li>Exchange和Queue的绑定可以是多对多的关系。</li>
+</ul>
+<p><strong>Virtual host（vhosts）</strong></p>
+<ul>
+<li>在 rabbitmq server上可以创建多个虚拟机的message broker，又叫做virtual hosts（vhosts）。</li>
+<li>每一个vhost本质上是一个mini-rabbitmq server，分别管理各自的exchange和bindings。</li>
+<li>vhost相当于物理的server，可以为不同app提供边界隔离。</li>
+<li>producer和consumer连接rabbit server需要指定一个vhost</li>
+</ul>
+<h4 id="三、RabbitMQ运行机制"><a href="#三、RabbitMQ运行机制" class="headerlink" title="三、RabbitMQ运行机制"></a>三、RabbitMQ运行机制</h4><p><img src="https://img-blog.csdnimg.cn/2020022211333668.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="RabbitMQ运行机制"></p>
+<h4 id="四、SpringBoot整合RabbitMQ"><a href="#四、SpringBoot整合RabbitMQ" class="headerlink" title="四、SpringBoot整合RabbitMQ"></a>四、SpringBoot整合RabbitMQ</h4><h5 id="1-引入spring-boot-starter-amqp"><a href="#1-引入spring-boot-starter-amqp" class="headerlink" title="1.引入spring-boot-starter-amqp"></a>1.引入spring-boot-starter-amqp</h5><pre class="line-numbers language-xml"><code class="language-xml"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-amqp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.amqp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-rabbit-test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">></span></span>test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="2-在docker中下载rabbitmq的镜像"><a href="#2-在docker中下载rabbitmq的镜像" class="headerlink" title="2.在docker中下载rabbitmq的镜像"></a>2.在docker中下载rabbitmq的镜像</h5><p>1.在<a href="https://hub.docker.com/" target="_blank" rel="noopener">docker hub</a>上搜索rabbitmq镜像，尽量安装带有management标志的(<em><strong>附带有web管理界面</strong></em>)<br><img src="https://img-blog.csdnimg.cn/20200222121939739.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="在docker hub上搜索镜像"><br>2.拉取rabbitmq镜像</p>
+<pre class="line-numbers language-shell"><code class="language-shell">docker pull rabbitmq:3-management<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>3.查看下载镜像</p>
+<pre class="line-numbers language-shell"><code class="language-shell">docker iamges                 //查看下载镜像<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20200222123630529.png" alt="查看镜像"><br>4.启动运行镜像</p>
+<pre class="line-numbers language-shell"><code class="language-shell">docker run -d -p 5672:5672 -p 15672:15672 --name myrabbitmq a64a4ae7bc1f<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>-d:表示后台运行<br>-p:表示暴露端口<br>5672:是客户端和rabbitmq进行通信的端口<br>15672:管理界面访问web页面的端口<br>==我的已经运行了我就直接启动==</p>
+<p>5.查看所有的容器（无论运行还是停止都有）</p>
+<pre class="line-numbers language-shell"><code class="language-shell">docker ps -a<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20200222124428702.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="查看所有容器"><br>6.启动容器</p>
+<pre class="line-numbers language-shell"><code class="language-shell">docker start 37739ced79ed<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>7.查看运行的容器（只包含运行的容器）</p>
+<pre class="line-numbers language-shell"><code class="language-shell">docker ps<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>![查看正在运行的容器]<a href="https://img-blog.csdnimg.cn/20200222124719445.png)](https://img-blog.csdnimg.cn/2020022212480088.png)" target="_blank" rel="noopener">https://img-blog.csdnimg.cn/20200222124719445.png)](https://img-blog.csdnimg.cn/2020022212480088.png)</a><br>输入192.168.43.186：15672（192.168.43.186虚拟机地址）访问rabbitmq的web管理页面 <em>** 默认密码和账号都是guest **</em><img src="https://img-blog.csdnimg.cn/20200222124935571.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="访问rabbitmq的web管理页面"><br><img src="https://img-blog.csdnimg.cn/20200222125147238.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="登陆界面"></p>
+<h5 id="3-测试数据"><a href="#3-测试数据" class="headerlink" title="3.测试数据"></a>3.测试数据</h5><p>1.创建三个交换器<br><img src="https://img-blog.csdnimg.cn/20200222125907158.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="创建三个交换器"><br>2.添加四个消息队列<br><img src="https://img-blog.csdnimg.cn/20200222130159997.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="添加4个消息队列"><br><em><strong>我们创建的队列要是能工作我们就得与我们创建的交换器进行绑定（binding）</strong></em><br><em>在次列举exchange.direct与消息队列的绑定其余同理可得</em><br><img src="https://img-blog.csdnimg.cn/20200222130951228.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="交换器与消息队列的绑定"><br><strong>测试：</strong><br><strong>1.</strong> exchange.direct（<em><strong>是完全匹配路由键的</strong>_）在exchange.direct交换器中发送消息<br><img src="https://img-blog.csdnimg.cn/20200222133313612.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="发送消息进行测试"><br><strong>所以只有atorg一个消息队列能收到此消息</strong><img src="https://img-blog.csdnimg.cn/20200222133615530.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="只有一个队列收到消息"><br><strong>点击atorg得到发送的消息</strong><img src="https://img-blog.csdnimg.cn/20200222133742480.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="得到我们发送的消息"><br><strong>2.</strong> exchange.fanout（</em><strong>无论路由键是什么会发送给每一个消息队列</strong><em>）在exchange.fanout发送消息<br><img src="https://img-blog.csdnimg.cn/20200222134348853.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="发送消息"><br><strong>每个消息队列都收到消息</strong><br><img src="https://img-blog.csdnimg.cn/20200222134312469.png" alt="每个消息队列都收到消息"><br><strong>3.</strong> exchange.topic（</em><strong>根据规则匹配</strong>_）在exchange.topic发送消息<br><img src="https://img-blog.csdnimg.cn/20200222135246673.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="topic交换器根据规则匹配"><br><strong>查看消息队列发现每个消息队列的消息都增加了</strong><br><img src="https://img-blog.csdnimg.cn/20200222135429467.png" alt="查看消息队列"></p>
+<h5 id="4-整合"><a href="#4-整合" class="headerlink" title="4.整合"></a>4.整合</h5><p>配置文件</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml">spring.rabbitmq.addresses=192.168.43.186           <span class="token comment" spellcheck="true">#虚拟机地址</span>
+spring.rabbitmq.username=guest                     <span class="token comment" spellcheck="true">#rabbitmqweb页面账号和密码</span>
+spring.rabbitmq.password=guest
+spring.rabbitmq.port=5672<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>在测试类进行发送数据测试</strong><br>在exchange.direct发送消息我们知道direct是完全匹配路由键故只有atorg.news收到消息</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Autowired</span>
+    RabbitTemplate rabbitTemplate<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/**
+     * 1.单播（点对点）
+     */</span>
+<span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">void</span> <span class="token function">contextLoads</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//Message需要自己构造一个;定义消息内容和消息头</span>
+        <span class="token comment" spellcheck="true">//rabbitTemplate.send(exchange, routeKey, message);</span>
 
-<span class="token keyword">import</span> com<span class="token punctuation">.</span>fasterxml<span class="token punctuation">.</span>jackson<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>JsonIgnoreProperties<span class="token punctuation">;</span>
-<span class="token keyword">import</span> javax<span class="token punctuation">.</span>persistence<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//object默认当成消息体，只需要传入要发送的对象，自动序列化发送给rabbitmq</span>
+        <span class="token comment" spellcheck="true">//rabbitTemplate.convertAndSend(exchange, routeKey, object);</span>
 
-<span class="token comment" spellcheck="true">//配置映射关系，使用jpa注解</span>
-<span class="token comment" spellcheck="true">//@JsonIgnoreProperties(value = {"hibernateLazyInitializer"})</span>
-<span class="token annotation punctuation">@Entity</span>     <span class="token comment" spellcheck="true">//告诉JPA这是一个实体类（和数据表映射的类）</span>
-<span class="token annotation punctuation">@Table</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"tb1_user"</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//使用@Table来指定和那个数据表对应;如果省略默认表名就是user</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+        Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>Object<span class="token operator">></span> map <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"msg"</span><span class="token punctuation">,</span> <span class="token string">"这是第一个消息"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"data"</span><span class="token punctuation">,</span> Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">"helloworld"</span><span class="token punctuation">,</span><span class="token number">123</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//对象被默认序列化以后发送出去（默认是以jdk序列化规则）</span>
+        rabbitTemplate<span class="token punctuation">.</span><span class="token function">convertAndSend</span><span class="token punctuation">(</span><span class="token string">"exchange.direct"</span><span class="token punctuation">,</span><span class="token string">"atorg.news"</span><span class="token punctuation">,</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>在web端查看消息队列接收消息（只有atorg.news收到消息）</strong><br><em><em>我在次处理了序列化问题</em></em></p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atorg<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>config<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>support<span class="token punctuation">.</span>converter<span class="token punctuation">.</span>Jackson2JsonMessageConverter<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>support<span class="token punctuation">.</span>converter<span class="token punctuation">.</span>MessageConverter<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Bean<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Configuration<span class="token punctuation">;</span>
 
-    <span class="token annotation punctuation">@Id</span>            <span class="token comment" spellcheck="true">///这是一个主键</span>
-    <span class="token annotation punctuation">@GeneratedValue</span><span class="token punctuation">(</span>strategy <span class="token operator">=</span> GenerationType<span class="token punctuation">.</span>IDENTITY<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//表示主键自增</span>
-    <span class="token keyword">private</span> Integer id<span class="token punctuation">;</span>
-
-    <span class="token annotation punctuation">@Column</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"last_name"</span><span class="token punctuation">,</span>length <span class="token operator">=</span> <span class="token number">50</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//这是和数据表队对应的一个列</span>
-    <span class="token keyword">private</span> String lastName<span class="token punctuation">;</span>
-    <span class="token annotation punctuation">@Column</span>             <span class="token comment" spellcheck="true">//省略默认列名就是属性名</span>
-    <span class="token keyword">private</span> String email<span class="token punctuation">;</span>
-
-    <span class="token keyword">public</span> Integer <span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> id<span class="token punctuation">;</span>
+<span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyAMQPConfig</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> MessageConverter <span class="token function">messageConverter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Jackson2JsonMessageConverter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>管理页面得到发送的数据</strong><img src="https://img-blog.csdnimg.cn/20200222142421124.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="只有atorg.news收到消息"><br><strong>在测试类进行接受数据测试</strong></p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//接受数据，如何将数据自动转化为json发送出去</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">receive</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        Object o <span class="token operator">=</span> rabbitTemplate<span class="token punctuation">.</span><span class="token function">receiveAndConvert</span><span class="token punctuation">(</span><span class="token string">"atorg.news"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//此处写路由键名</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>o<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>控制台接收到数据</strong><br><img src="https://img-blog.csdnimg.cn/20200222142958857.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="控制台接受数据"><br><em><strong>我们收到消息之后消息队列就没有此条消息了</strong></em><img src="https://img-blog.csdnimg.cn/20200222143135342.png" alt="rabbitmqweb管理页面查看消息"><br><strong>我们可以利用AmqpAdmin创建、删除Queue,Exchange Binding</strong></p>
+<pre class="line-numbers language-java"><code class="language-java">    <span class="token annotation punctuation">@Autowired</span>
+    AmqpAdmin amqpAdmin<span class="token punctuation">;</span>
 
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setId</span><span class="token punctuation">(</span>Integer id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">creatExchange</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+   amqpAdmin<span class="token punctuation">.</span><span class="token function">declareExchange</span><span class="token punctuation">(</span><span class="token function">newDirectExchange</span><span class="token punctuation">(</span><span class="token string">"amqbadmin.exchange"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//创建交换器</span>
+   System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"创建完成"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    <span class="token keyword">public</span> String <span class="token function">getLastName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> lastName<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setLastName</span><span class="token punctuation">(</span>String lastName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>lastName <span class="token operator">=</span> lastName<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> String <span class="token function">getEmail</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> email<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setEmail</span><span class="token punctuation">(</span>String email<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>email <span class="token operator">=</span> email<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>@Entity:告诉JPA这是一个实体类,和数据表映射类;<br>**@Table(name=”tb1_user”)  :使用@Table来指定和那个数据表对应;如果省略默认表名就是类名小写即对应此表为user；</strong><br><strong>@Id：这是一个主键</strong><br><strong>@GeneratedValue(strategy = GenerationType.IDENTITY) ：表示主键自增；@Column(name = “last_name”,length = 50):表示这是和数据表队对应的一个列,可以自定义列名和长度，如果省略默认列名就是属性名</strong></p>
-<h6 id="3-编写一个Dao接口来操作实体类对应的数据表（Repository）"><a href="#3-编写一个Dao接口来操作实体类对应的数据表（Repository）" class="headerlink" title="3.编写一个Dao接口来操作实体类对应的数据表（Repository）"></a>3.编写一个Dao接口来操作实体类对应的数据表（Repository）</h6><pre class="line-numbers language-java"><code class="language-java">    <span class="token keyword">package</span> com<span class="token punctuation">.</span>atorg<span class="token punctuation">.</span>springboot<span class="token punctuation">.</span>repository<span class="token punctuation">;</span>
-
-    <span class="token keyword">import</span> com<span class="token punctuation">.</span>atorg<span class="token punctuation">.</span>springboot<span class="token punctuation">.</span>entity<span class="token punctuation">.</span>User<span class="token punctuation">;</span>
-    <span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>data<span class="token punctuation">.</span>jpa<span class="token punctuation">.</span>repository<span class="token punctuation">.</span>JpaRepository<span class="token punctuation">;</span>
-
-    <span class="token comment" spellcheck="true">//继承JpaRepository来完成对数据库的操作</span>
-    <span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserRepository</span> <span class="token keyword">extends</span> <span class="token class-name">JpaRepository</span><span class="token operator">&lt;</span>User<span class="token punctuation">,</span>Integer<span class="token operator">></span> <span class="token punctuation">{</span>
-    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>此外还得对jpa进行基本的配置</strong>参考<strong>JpaRepository</strong></p>
-<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">spring</span><span class="token punctuation">:</span> 
-  <span class="token key atrule">jpa</span><span class="token punctuation">:</span>
-     <span class="token key atrule">hibernate</span><span class="token punctuation">:</span>
-<span class="token comment" spellcheck="true">#      更新或者创建数据表结构(如果没有实体类中的数据表时将自动创建，如果存在将自动更新数据)</span>
-       <span class="token key atrule">ddl-auto</span><span class="token punctuation">:</span> update
-<span class="token comment" spellcheck="true">#      控制台显示sql</span>
-       <span class="token key atrule">show-sql</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>jpa.hibernate.ddl-auto: update  //更新或者创建数据表结构(如果没有实体类中的数据表时将自动创建，如果存在将自动更新数据)</strong><br>可以有下图看到默认的数据池是<strong>HikariPool</strong><br><img src="https://img-blog.csdnimg.cn/20200203172839832.png" alt="成功创建数据表"><br>数据库成功创建数据表<br><img src="https://img-blog.csdnimg.cn/20200203172925207.png" alt="数据库成功添加数据表"></p>
-<h6 id="4-编写Controller进行测试"><a href="#4-编写Controller进行测试" class="headerlink" title="4.编写Controller进行测试"></a>4.编写Controller进行测试</h6><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>atorg<span class="token punctuation">.</span>springboot<span class="token punctuation">.</span>controller<span class="token punctuation">;</span>
-
-<span class="token keyword">import</span> com<span class="token punctuation">.</span>atorg<span class="token punctuation">.</span>springboot<span class="token punctuation">.</span>entity<span class="token punctuation">.</span>User<span class="token punctuation">;</span>
-<span class="token keyword">import</span> com<span class="token punctuation">.</span>atorg<span class="token punctuation">.</span>springboot<span class="token punctuation">.</span>repository<span class="token punctuation">.</span>UserRepository<span class="token punctuation">;</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>beans<span class="token punctuation">.</span>factory<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Autowired<span class="token punctuation">;</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>GetMapping<span class="token punctuation">;</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>PathVariable<span class="token punctuation">;</span>
-<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>RestController<span class="token punctuation">;</span>
-
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Optional<span class="token punctuation">;</span>
-<span class="token annotation punctuation">@RestController</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserController</span> <span class="token punctuation">{</span>
-
-    <span class="token annotation punctuation">@Autowired</span>
-    UserRepository userRepository<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//查询数据</span>
-    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/user/{id}"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> User <span class="token function">getUser</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span> Integer id<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        User user <span class="token operator">=</span> userRepository<span class="token punctuation">.</span><span class="token function">findById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">orElse</span><span class="token punctuation">(</span>null<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> user<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token comment" spellcheck="true">//插入数据</span>
-    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/user"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> User <span class="token function">insertUser</span><span class="token punctuation">(</span>User user <span class="token punctuation">)</span><span class="token punctuation">{</span>
-        User save<span class="token operator">=</span>userRepository<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> save<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>findById(id)，save()</strong> 这两个方法是UserRepository 因为<strong>继承JpaRepository在JpaRepository封装了操作数据库的所有方法</strong><br><strong>发送查询请求</strong><br><img src="https://img-blog.csdnimg.cn/20200203173651893.png" alt="在这里插入图片描述"><br><strong>控制台生成sql语句</strong><br><img src="https://img-blog.csdnimg.cn/20200203173618122.png" alt="在控制台生成的sql语句"><br><strong>发送插入数据请求</strong><br><img src="https://img-blog.csdnimg.cn/20200203173923542.png" alt="插入数据"><br><strong>控制台生成的sql语句</strong><br><img src="https://img-blog.csdnimg.cn/20200203174000360.png" alt="控制台生成的sql语句"><br><strong>数据库数据表的信息增加</strong><br><img src="https://img-blog.csdnimg.cn/20200203174054318.png" alt="数据库数据表的信息增加"></p>
+   amqpAdmin<span class="token punctuation">.</span><span class="token function">declareQueue</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Queue</span><span class="token punctuation">(</span><span class="token string">"amqpadmin.queue"</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//创建消息队列</span>
+   amqpAdmin<span class="token punctuation">.</span><span class="token function">declareBinding</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Binding</span><span class="token punctuation">(</span><span class="token string">"amqpadmin.queue"</span><span class="token punctuation">,</span> Binding<span class="token punctuation">.</span>DestinationType<span class="token punctuation">.</span>QUEUE<span class="token punctuation">,</span> <span class="token string">"amqbadmin.exchange"</span><span class="token punctuation">,</span> <span class="token string">"amqp.haha"</span><span class="token punctuation">,</span> null<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//创建绑定规则</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>查看web管理页面的交换器</strong><br><img src="https://img-blog.csdnimg.cn/20200222144411189.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="创建的交换器"><br><strong>查看web管理页面的消息队列</strong><br><img src="https://img-blog.csdnimg.cn/20200222144704874.png" alt="创建的消息队列"><br><strong>查看web管理页面的绑定规则</strong><br><img src="https://img-blog.csdnimg.cn/20200222144832494.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="创建的绑定规则"><br><em><strong>有问题希望大家能多多斧正</strong></em></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -632,7 +655,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/Lelege0/2020/02/04/SpringBoot%E4%B8%8E%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE%EF%BC%88JPA%EF%BC%89/">https://github.com/Lelege0/2020/02/04/SpringBoot%E4%B8%8E%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE%EF%BC%88JPA%EF%BC%89/</a>
+                    <a href="https://github.com/Lelege0/2020/02/22/SpringBoot%E4%B8%8E%E6%B6%88%E6%81%AF/">https://github.com/Lelege0/2020/02/22/SpringBoot%E4%B8%8E%E6%B6%88%E6%81%AF/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -674,12 +697,8 @@
                                     <span class="chip bg-color">SpringBoot</span>
                                 </a>
                             
-                                <a href="/tags/SpringData-JPA/">
-                                    <span class="chip bg-color">SpringData JPA</span>
-                                </a>
-                            
-                                <a href="/tags/MySql/">
-                                    <span class="chip bg-color">MySql</span>
+                                <a href="/tags/%E6%B6%88%E6%81%AF/">
+                                    <span class="chip bg-color">消息</span>
                                 </a>
                             
                         </div>
@@ -725,7 +744,7 @@
         repo: 'Lelege0.github.io',
         owner: 'Lelege0',
         admin: ["Lelege0"],
-        id: '2020-02-04T07-18-36',
+        id: '2020-02-22T14-54-42',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -746,30 +765,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/02/04/SpringBoot%E4%B8%8E%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE(MyBatis)/">
+                <a href="/2020/02/22/SpringBoot%E4%B8%8E%E6%B6%88%E6%81%AF/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="SpringBoot与数据访问(MyBatis)">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="SpringBoot与消息">
                         
-                        <span class="card-title">SpringBoot与数据访问(MyBatis)</span>
+                        <span class="card-title">SpringBoot与消息</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            三、整合MyBatis1.引入mybatis-starter(mybatis-spring-boot-starter)依赖&lt;dependency>
-        &lt;groupId>org.mybatis.spring.boot
+                            一、概述1、在大多数应用中，我们系统之间需要进行异步通信，即异步消息2、异步消息中两个重要概念：        消息代理（message broker）和目的地（destination）消息代理： 是一种在数据源与目的地之间移动数据使信息处
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -778,22 +797,15 @@
                                     Java
                                 </a>
                             
-                            <a href="/categories/Java/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
-                                </a>
-                            
-                            <a href="/categories/Java/%E5%90%8E%E7%AB%AF/MyBatis/" class="post-category">
-                                    MyBatis
-                                </a>
-                            
-                            <a href="/categories/Java/%E5%90%8E%E7%AB%AF/MyBatis/MySql/" class="post-category">
-                                    MySql
+                            <a href="/categories/Java/RabbitMQ/" class="post-category">
+                                    RabbitMQ
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -801,12 +813,8 @@
                         <span class="chip bg-color">SpringBoot</span>
                     </a>
                     
-                    <a href="/tags/MySql/">
-                        <span class="chip bg-color">MySql</span>
-                    </a>
-                    
-                    <a href="/tags/MyBatis/">
-                        <span class="chip bg-color">MyBatis</span>
+                    <a href="/tags/%E6%B6%88%E6%81%AF/">
+                        <span class="chip bg-color">消息</span>
                     </a>
                     
                 </div>
@@ -820,25 +828,24 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/04/SpringBoot%E4%B8%8E%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE%EF%BC%88JDBC%EF%BC%89/">
+                <a href="/2020/02/22/SpringBoot%E4%B8%8E%E7%BC%93%E5%AD%98/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="SpringBoot与数据访问（JDBC）">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="SpringBoot与缓存">
                         
-                        <span class="card-title">SpringBoot与数据访问（JDBC）</span>
+                        <span class="card-title">SpringBoot与缓存</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、整合最基本的JDBC1.引入最基本的jdbc和MySQL驱动依赖&lt;dependency>                         //jdbc依赖
-        &lt;groupId>org.springframewo
+                            一、SpringBoot与缓存1、基础概念缓存：缓存是指可以进行高速数据交换的存储器，它先于内存与CPU交换数据，因此速率很快。缓存作用：缓存的工作原理是当CPU要读取一个数据时，首先从CPU缓存中查找，找到就立即读取并送给CPU处理；没有
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-22
                             </span>
                         <span class="publish-author">
                             
@@ -848,16 +855,12 @@
                                     Java
                                 </a>
                             
-                            <a href="/categories/Java/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
+                            <a href="/categories/Java/cache/" class="post-category">
+                                    cache
                                 </a>
                             
-                            <a href="/categories/Java/%E5%90%8E%E7%AB%AF/JDBC/" class="post-category">
-                                    JDBC
-                                </a>
-                            
-                            <a href="/categories/Java/%E5%90%8E%E7%AB%AF/JDBC/MySql/" class="post-category">
-                                    MySql
+                            <a href="/categories/Java/cache/redis/" class="post-category">
+                                    redis
                                 </a>
                             
                             
@@ -867,16 +870,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JDBC/">
-                        <span class="chip bg-color">JDBC</span>
-                    </a>
-                    
                     <a href="/tags/SpringBoot/">
                         <span class="chip bg-color">SpringBoot</span>
                     </a>
                     
-                    <a href="/tags/DruidDataSource/">
-                        <span class="chip bg-color">DruidDataSource</span>
+                    <a href="/tags/%E7%BC%93%E5%AD%98/">
+                        <span class="chip bg-color">缓存</span>
                     </a>
                     
                 </div>
