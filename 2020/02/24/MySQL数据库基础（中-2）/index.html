@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JDBC在项目中配置数据库驱动, 乐乐哥">
-    <meta name="description" content="1.右击项目Build Path——&amp;gt;configure Build Path2.Add Exteranl JARs下载链接：Mysql-connection-java-版本-bin.jar 3.选择你的Ecllipse与之对应的JA">
+    <meta name="keywords" content="MySQL数据库基础（中-2）, 乐乐哥">
+    <meta name="description" content="9.视图的引入==视图是原始数据库数据的一种变换，是查看表中数据的另外一种方式。可以将视图看成是一个移动的窗口，通过它可以看到感兴趣的数据。 视图是从一个或多个实际表中获得的，这些表的数据存放在数据库中。那些用于产生视图的表叫做该视图的基表">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>JDBC在项目中配置数据库驱动 | 乐乐哥</title>
+    <title>MySQL数据库基础（中-2） | 乐乐哥</title>
     <link rel="icon" type="image/png" href="/favicon2.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -282,13 +282,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        JDBC在项目中配置数据库驱动
+                        MySQL数据库基础（中-2）
                     </div>
                 </div>
             </div>
@@ -406,16 +406,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/JDBC/">
-                                <span class="chip bg-color">JDBC</span>
-                            </a>
-                        
                             <a href="/tags/Java/">
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
                             <a href="/tags/Mysql/">
                                 <span class="chip bg-color">Mysql</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                <span class="chip bg-color">数据库</span>
                             </a>
                         
                     </div>
@@ -426,15 +426,7 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Java/" class="post-category">
-                                Java
-                            </a>
-                        
-                            <a href="/categories/Java/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                后端
-                            </a>
-                        
-                            <a href="/categories/Java/%E5%90%8E%E7%AB%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
                                 数据库
                             </a>
                         
@@ -447,28 +439,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-12-06
+                    2020-02-24
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2019-12-07
+                    2020-02-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    111
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    4 Min
                 </div>
                 
 				
@@ -484,8 +476,39 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>1.右击项目Build Path——&gt;configure Build Path<br><img src="https://img-blog.csdnimg.cn/20190922201229384.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>2.Add Exteranl JARs<br>下载链接：<a href="https://dev.mysql.com/" target="_blank" rel="noopener">Mysql-connection-java-版本-bin.jar </a><br><img src="https://img-blog.csdnimg.cn/20190922201143445.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>3.选择你的Ecllipse与之对应的JAR版本<br>参考：<a href="https://blog.csdn.net/hchhan/article/details/81106992" target="_blank" rel="noopener">Ecllipse与之对应的JAR版本</a>（转）<br>4.选择版本 Apply -&gt;Apply and close</p>
-<p><img src="https://img-blog.csdnimg.cn/20190922201710352.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+                <h4 id="9-视图的引入"><a href="#9-视图的引入" class="headerlink" title="9.视图的引入"></a>9.视图的引入</h4><p>==视图是原始数据库数据的一种变换，是查看表中数据的另外一种方式。可以将视图看成是一个移动的窗口，通过它可以看到感兴趣的数据。 视图是从一个或多个实际表中获得的，这些表的数据存放在数据库中。那些用于产生视图的表叫做该视图的基表。一个视图也可以从另一个视图中产生。==<br><strong>当通过视图修改数据时，实际上是在改变基表中的数据；相反地，基表数据的改变也会自动反映在由基表产生的视图中。</strong></p>
+<p><strong>引入视图的作用：</strong><br>==安全：有的数据是需要保密的，如果直接把表给出来进行操作会造成泄密，那么可以通过创建视图把相应视图的权限给出来即可保证数据的安全。<br>高效：复杂的连接查询，每次执行时效率比较低，可以考虑新建视图，每次从视图中获取，将会提高效率 ==</p>
+<h5 id="9-1-创建视图（实例）"><a href="#9-1-创建视图（实例）" class="headerlink" title="9.1 创建视图（实例）"></a>9.1 创建视图（实例）</h5><h6 id="在单表上创建视图"><a href="#在单表上创建视图" class="headerlink" title="在单表上创建视图"></a>在单表上创建视图</h6><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">VIEW</span> v1 <span class="token keyword">AS</span> <span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_book<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//创建视图</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">VIEW</span> v2 <span class="token keyword">AS</span> <span class="token keyword">SELECT</span> bookName<span class="token punctuation">,</span>price <span class="token keyword">FROM</span> t_book<span class="token punctuation">;</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">VIEW</span> v3<span class="token punctuation">(</span><span class="token number">b</span><span class="token punctuation">,</span>p<span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token keyword">SELECT</span> bookName<span class="token punctuation">,</span>price <span class="token keyword">FROM</span> t_book<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//在单表上创建视图，（b,p）为字段创建别名</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h6 id="在多表上创建视图"><a href="#在多表上创建视图" class="headerlink" title="在多表上创建视图"></a>在多表上创建视图</h6><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">VIEW</span> v4 <span class="token keyword">AS</span> <span class="token keyword">SELECT</span> bookName<span class="token punctuation">,</span>bookTypeName <span class="token keyword">FROM</span> t_book<span class="token punctuation">,</span>t_bookType <span class="token keyword">WHERE</span> t_book<span class="token punctuation">.</span><span class="token punctuation">`</span>bookTypeId<span class="token punctuation">`</span><span class="token operator">=</span>t_bookType<span class="token punctuation">.</span><span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">;</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">VIEW</span> v5 <span class="token keyword">AS</span> <span class="token keyword">SELECT</span> tb<span class="token punctuation">.</span>bookName<span class="token punctuation">,</span>tby<span class="token punctuation">.</span>bookTypeName <span class="token keyword">FROM</span> t_book tb<span class="token punctuation">,</span>t_bookType tby <span class="token keyword">WHERE</span> tb<span class="token punctuation">.</span><span class="token punctuation">`</span>bookTypeId<span class="token punctuation">`</span><span class="token operator">=</span>tby<span class="token punctuation">.</span><span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h6 id="查看视图"><a href="#查看视图" class="headerlink" title="查看视图"></a>查看视图</h6><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">DESCRIBE</span><span class="token punctuation">(</span>简写<span class="token keyword">DESC</span><span class="token punctuation">)</span> v5<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//查看视图基本信息</span>
+<span class="token keyword">SHOW</span> <span class="token keyword">TABLE</span> <span class="token keyword">STATUS</span> <span class="token operator">LIKE</span> <span class="token string">'v5'</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//查看视图基本信息</span>
+<span class="token keyword">SHOW</span> <span class="token keyword">CREATE</span> <span class="token keyword">VIEW</span> v5<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//查看视图详细信息</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h6 id="修改视图"><a href="#修改视图" class="headerlink" title="修改视图"></a>修改视图</h6><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token operator">OR</span> REPLACE <span class="token keyword">VIEW</span> v1<span class="token punctuation">(</span>bookName<span class="token punctuation">,</span>price<span class="token punctuation">)</span> <span class="token keyword">AS</span> <span class="token keyword">SELECT</span> bookName<span class="token punctuation">,</span>price <span class="token keyword">FROM</span> t_book<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//用CREATE OR REPLACE VIEW修改视图</span>
+<span class="token keyword">ALTER</span> <span class="token keyword">VIEW</span> v1 <span class="token keyword">AS</span> <span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_book<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//用ALTER语句修改视图</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h6 id="插入视图"><a href="#插入视图" class="headerlink" title="插入视图"></a>插入视图</h6><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> v1 <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token boolean">NULL</span><span class="token punctuation">,</span><span class="token string">'java good'</span><span class="token punctuation">,</span><span class="token number">120</span><span class="token punctuation">,</span><span class="token string">'feng'</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//在视图中插入视图，视图是一张虚表</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h6 id="更新视图（更新视图是指通过视图来插入（INSERT）、更新（UPDATE）和删除（DELETE）表中的数据。因为视图是一个虚拟的表，其中没有数据。通过视图更新时，都是转换基本表来更新。更新视图时，只能更新权限范围内的数据。超出了范围，就不能更新。）"><a href="#更新视图（更新视图是指通过视图来插入（INSERT）、更新（UPDATE）和删除（DELETE）表中的数据。因为视图是一个虚拟的表，其中没有数据。通过视图更新时，都是转换基本表来更新。更新视图时，只能更新权限范围内的数据。超出了范围，就不能更新。）" class="headerlink" title="更新视图（更新视图是指通过视图来插入（INSERT）、更新（UPDATE）和删除（DELETE）表中的数据。因为视图是一个虚拟的表，其中没有数据。通过视图更新时，都是转换基本表来更新。更新视图时，只能更新权限范围内的数据。超出了范围，就不能更新。）"></a>更新视图（更新视图是指通过视图来插入（INSERT）、更新（UPDATE）和删除（DELETE）表中的数据。因为视图是一个虚拟的表，其中没有数据。通过视图更新时，都是转换基本表来更新。更新视图时，只能更新权限范围内的数据。超出了范围，就不能更新。）</h6><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">UPDATE</span> v1 <span class="token keyword">SET</span> bookName<span class="token operator">=</span><span class="token string">'java very good'</span><span class="token punctuation">,</span>price<span class="token operator">=</span><span class="token number">200</span> <span class="token keyword">WHERE</span> id<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//更新视图中的表</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h6 id="删除视图中的数据"><a href="#删除视图中的数据" class="headerlink" title="删除视图中的数据"></a>删除视图中的数据</h6><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">DELETE</span> <span class="token keyword">FROM</span> v1 <span class="token keyword">WHERE</span> id<span class="token operator">=</span><span class="token number">7</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//删除视图中的数据</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h6 id="删除视图"><a href="#删除视图" class="headerlink" title="删除视图"></a>删除视图</h6><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">VIEW</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> v4<span class="token punctuation">;</span><span class="token comment" spellcheck="true">///删除视图</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="10-触发器的引入"><a href="#10-触发器的引入" class="headerlink" title="10.触发器的引入"></a>10.触发器的引入</h4><p>==触发器是与表事件相关的特殊的存储过程，它的执行不是由程序调用，也不是手工启动，而是由事件来触发，比如当对一个表进行操作（ insert，delete， update）时就会激活它执行。触发器可以查询其他表，而且可以包含复杂的SQL语句。它们主要用于强制服从复杂的业务规则或要求。==</p>
+<h5 id="10-1创建与使用触发器（实例）"><a href="#10-1创建与使用触发器（实例）" class="headerlink" title="10.1创建与使用触发器（实例）"></a>10.1创建与使用触发器（实例）</h5><h6 id="创建只有一个语句的触发器"><a href="#创建只有一个语句的触发器" class="headerlink" title="创建只有一个语句的触发器"></a>创建只有一个语句的触发器</h6><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TRIGGER</span> trig_book <span class="token keyword">AFTER</span> <span class="token keyword">INSERT</span>
+      <span class="token keyword">ON</span> t_book <span class="token keyword">FOR EACH ROW</span> 
+      <span class="token keyword">UPDATE</span> t_bookType <span class="token keyword">SET</span> bookNum<span class="token operator">=</span>bookNum<span class="token operator">+</span><span class="token number">1</span> <span class="token keyword">WHERE</span> new<span class="token punctuation">.</span>bookTypeId<span class="token operator">=</span>t_bookType<span class="token punctuation">.</span><span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">//创建只有一个语句的触发器</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="创建有多个执行语句的触发器"><a href="#创建有多个执行语句的触发器" class="headerlink" title="创建有多个执行语句的触发器"></a>创建有多个执行语句的触发器</h6><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">DELIMITER</span> <span class="token operator">|</span>（默认情况下，不可能等到用户把这些语句全部输入完之后，再执行整段语句。因为mysql一遇到分号，它就要自动执行。）
+<span class="token keyword">CREATE</span> <span class="token keyword">TRIGGER</span> trig_book2 <span class="token keyword">AFTER</span> <span class="token keyword">DELETE</span>
+      <span class="token keyword">ON</span> t_book <span class="token keyword">FOR EACH ROW</span>
+      <span class="token keyword">BEGIN</span>
+          <span class="token keyword">UPDATE</span> t_bookType <span class="token keyword">SET</span> bookNum<span class="token operator">=</span>bookNum<span class="token number">-1</span> <span class="token keyword">WHERE</span> old<span class="token punctuation">.</span>bookTypeId<span class="token operator">=</span>t_bookType<span class="token punctuation">.</span><span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">;</span>
+          <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> t_log <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token boolean">NULL</span><span class="token punctuation">,</span><span class="token function">NOW</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'在book表中删除了一条数据'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">DELETE</span> <span class="token keyword">FROM</span> t_test <span class="token keyword">WHERE</span> old<span class="token punctuation">.</span>bookTypeId<span class="token operator">=</span>t_test<span class="token punctuation">.</span><span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">;</span>
+      <span class="token keyword">END</span> <span class="token operator">|</span>
+<span class="token keyword">DELIMITER</span> <span class="token punctuation">;</span><span class="token comment" spellcheck="true">//创建有多个执行语句的触发器</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>DELIMITER的详细用法转：<a href="https://www.cnblogs.com/nickup/p/6628892.html" target="_blank" rel="noopener">DELIMITER详细</a></p>
+<h6 id="查看触发器1"><a href="#查看触发器1" class="headerlink" title="查看触发器1"></a>查看触发器1</h6><pre><code>SHOW TRIGGERS;//查看所有的触发器)</code></pre><h6 id="查看触发器2（第二种方法是在系统表里查看触发器）"><a href="#查看触发器2（第二种方法是在系统表里查看触发器）" class="headerlink" title="查看触发器2（第二种方法是在系统表里查看触发器）"></a>查看触发器2（第二种方法是在系统表里查看触发器）</h6><p><img src="https://img-blog.csdnimg.cn/20190925180132660.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="在系统表里查看触发器"></p>
+<h6 id="删除触发器"><a href="#删除触发器" class="headerlink" title="删除触发器"></a>删除触发器</h6><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">TRIGGER</span> trig_book <span class="token punctuation">;</span><span class="token comment" spellcheck="true">//删除触发器</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -529,7 +552,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/Lelege0/2019/12/06/JDBC%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E9%A9%B1%E5%8A%A8/">https://github.com/Lelege0/2019/12/06/JDBC%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E9%A9%B1%E5%8A%A8/</a>
+                    <a href="https://github.com/Lelege0/2020/02/24/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD-2%EF%BC%89/">https://github.com/Lelege0/2020/02/24/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD-2%EF%BC%89/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -567,16 +590,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/JDBC/">
-                                    <span class="chip bg-color">JDBC</span>
-                                </a>
-                            
                                 <a href="/tags/Java/">
                                     <span class="chip bg-color">Java</span>
                                 </a>
                             
                                 <a href="/tags/Mysql/">
                                     <span class="chip bg-color">Mysql</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                    <span class="chip bg-color">数据库</span>
                                 </a>
                             
                         </div>
@@ -622,7 +645,7 @@
         repo: 'Lelege0.github.io',
         owner: 'Lelege0',
         admin: ["Lelege0"],
-        id: '2019-12-06T17-41-53',
+        id: '2020-02-24T12-05-10',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -643,54 +666,56 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2019/12/09/Tomcat%E5%9C%A8Eclipse%E9%83%A8%E7%BD%B2%E5%AE%8C%E6%88%90%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%90%AF%E5%8A%A8%EF%BC%8C%E4%BD%86%E6%98%AF%E8%BF%90%E8%A1%8C%E6%97%B6404%EF%BC%81/">
+                <a href="/2020/02/24/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%AD-2%EF%BC%89/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Tomcat在Eclipse部署完成也可以启动，但是运行时404！">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="MySQL数据库基础（中-2）">
                         
-                        <span class="card-title">Tomcat在Eclipse部署完成也可以启动，但是运行时404！</span>
+                        <span class="card-title">MySQL数据库基础（中-2）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Tomcat在Eclipse部署完成也可以启动，但是运行时404（运行startup.bat可以运行程序）！默认情况是如下图==默认部署时打开tomcat时所有选项都是不可选的，都是灰色的，此时要清除部署直接删除或者右键点击tomcat之后
+                            9.视图的引入==视图是原始数据库数据的一种变换，是查看表中数据的另外一种方式。可以将视图看成是一个移动的窗口，通过它可以看到感兴趣的数据。 视图是从一个或多个实际表中获得的，这些表的数据存放在数据库中。那些用于产生视图的表叫做该视图的基表
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Tomcat/" class="post-category">
-                                    Tomcat
-                                </a>
-                            
-                            <a href="/categories/Tomcat/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    数据库
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Tomcat/">
-                        <span class="chip bg-color">Tomcat</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/Web%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                        <span class="chip bg-color">Web应用服务器</span>
+                    <a href="/tags/Mysql/">
+                        <span class="chip bg-color">Mysql</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
                     </a>
                     
                 </div>
@@ -704,36 +729,32 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/06/SpringBoot%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">
+                <a href="/2020/02/24/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8B%EF%BC%89/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="SpringBoot基础（一）">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="MySQL数据库基础（下）">
                         
-                        <span class="card-title">SpringBoot基础（一）</span>
+                        <span class="card-title">MySQL数据库基础（下）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1.SpringBoot简介Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。
-1.1pom文
+                            11.MySQL 常用函数日期和时间函数SELECT CURDATE(),CURTIME(),MONTH(birthday) AS m FROM t_data;//返回当前日期，时间，返回birthday中的月份值
+字符串函数SELECT 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-24
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
-                                </a>
-                            
-                            <a href="/categories/Java/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    数据库
                                 </a>
                             
                             
@@ -743,12 +764,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SpringBoot/">
-                        <span class="chip bg-color">SpringBoot</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/">
-                        <span class="chip bg-color">后端框架</span>
+                    <a href="/tags/Mysql/">
+                        <span class="chip bg-color">Mysql</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
                     </a>
                     
                 </div>

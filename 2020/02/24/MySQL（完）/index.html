@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JDBC在项目中配置数据库驱动, 乐乐哥">
-    <meta name="description" content="1.右击项目Build Path——&amp;gt;configure Build Path2.Add Exteranl JARs下载链接：Mysql-connection-java-版本-bin.jar 3.选择你的Ecllipse与之对应的JA">
+    <meta name="keywords" content="MySQL（完）, 乐乐哥">
+    <meta name="description" content="14.流程控制的使用（实例）==存储过程和函数中可以使用流程控制来控制语句的执行。MySQL 中可以使用 IF 语句、CASE 语句、LOOP语句、LEAVE 语句、ITERATE 语句、REPEAT 语句和 WHILE 语句来进行流程控制">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>JDBC在项目中配置数据库驱动 | 乐乐哥</title>
+    <title>MySQL（完） | 乐乐哥</title>
     <link rel="icon" type="image/png" href="/favicon2.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -282,13 +282,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        JDBC在项目中配置数据库驱动
+                        MySQL（完）
                     </div>
                 </div>
             </div>
@@ -406,16 +406,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/JDBC/">
-                                <span class="chip bg-color">JDBC</span>
-                            </a>
-                        
                             <a href="/tags/Java/">
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
                             <a href="/tags/Mysql/">
                                 <span class="chip bg-color">Mysql</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                <span class="chip bg-color">数据库</span>
                             </a>
                         
                     </div>
@@ -426,15 +426,7 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Java/" class="post-category">
-                                Java
-                            </a>
-                        
-                            <a href="/categories/Java/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                后端
-                            </a>
-                        
-                            <a href="/categories/Java/%E5%90%8E%E7%AB%AF/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
                                 数据库
                             </a>
                         
@@ -447,28 +439,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-12-06
+                    2020-02-24
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2019-12-07
+                    2020-02-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    111
+                    703
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    3 Min
                 </div>
                 
 				
@@ -484,8 +476,83 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>1.右击项目Build Path——&gt;configure Build Path<br><img src="https://img-blog.csdnimg.cn/20190922201229384.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>2.Add Exteranl JARs<br>下载链接：<a href="https://dev.mysql.com/" target="_blank" rel="noopener">Mysql-connection-java-版本-bin.jar </a><br><img src="https://img-blog.csdnimg.cn/20190922201143445.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>3.选择你的Ecllipse与之对应的JAR版本<br>参考：<a href="https://blog.csdn.net/hchhan/article/details/81106992" target="_blank" rel="noopener">Ecllipse与之对应的JAR版本</a>（转）<br>4.选择版本 Apply -&gt;Apply and close</p>
-<p><img src="https://img-blog.csdnimg.cn/20190922201710352.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+                <h4 id="14-流程控制的使用（实例）"><a href="#14-流程控制的使用（实例）" class="headerlink" title="14.流程控制的使用（实例）"></a>14.流程控制的使用（实例）</h4><p>==存储过程和函数中可以使用流程控制来控制语句的执行。MySQL 中可以使用 IF 语句、CASE 语句、LOOP语句、LEAVE 语句、ITERATE 语句、REPEAT 语句和 WHILE 语句来进行流程控制==</p>
+<h5 id="14-1（IF语句）"><a href="#14-1（IF语句）" class="headerlink" title="14.1（IF语句）"></a>14.1（IF语句）</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">DELIMITER</span> <span class="token operator">&amp;&amp;</span><span class="token comment" spellcheck="true">//if语句</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> pro_user5<span class="token punctuation">(</span><span class="token operator">IN</span> bookId <span class="token keyword">INT</span><span class="token punctuation">)</span>
+      <span class="token keyword">BEGIN</span>
+         <span class="token keyword">SELECT</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">INTO</span> <span class="token variable">@num</span> <span class="token keyword">FROM</span> t_user <span class="token keyword">WHERE</span> id<span class="token operator">=</span>bookId<span class="token punctuation">;</span>
+         <span class="token keyword">IF</span> <span class="token variable">@num</span><span class="token operator">></span><span class="token number">0</span> <span class="token keyword">THEN</span> <span class="token keyword">UPDATE</span> t_user <span class="token keyword">SET</span> userName<span class="token operator">=</span><span class="token string">'java12345'</span> <span class="token keyword">WHERE</span> id<span class="token operator">=</span>bookId<span class="token punctuation">;</span>
+         <span class="token keyword">ELSE</span>
+             <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> t_user <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token boolean">NULL</span><span class="token punctuation">,</span><span class="token string">'2312312'</span><span class="token punctuation">,</span><span class="token string">'23221312'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+             <span class="token keyword">END</span> <span class="token keyword">IF</span><span class="token punctuation">;</span>
+      <span class="token keyword">END</span>
+      <span class="token operator">&amp;&amp;</span>
+<span class="token keyword">DELIMITER</span> <span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="14-2（case语句）"><a href="#14-2（case语句）" class="headerlink" title="14.2（case语句）"></a>14.2（case语句）</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">DELIMITER</span> <span class="token operator">&amp;&amp;</span><span class="token comment" spellcheck="true">//case语句（@+变量可当作全局常量来理解）</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> pro_user6<span class="token punctuation">(</span><span class="token operator">IN</span> bookId <span class="token keyword">INT</span><span class="token punctuation">)</span>
+      <span class="token keyword">BEGIN</span>
+         <span class="token keyword">SELECT</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">INTO</span> <span class="token variable">@num</span> <span class="token keyword">FROM</span> t_user <span class="token keyword">WHERE</span> id<span class="token operator">=</span>bookId<span class="token punctuation">;</span>
+         <span class="token keyword">CASE</span> <span class="token variable">@num</span>
+           <span class="token keyword">WHEN</span> <span class="token number">1</span> <span class="token keyword">THEN</span> <span class="token keyword">UPDATE</span> t_user <span class="token keyword">SET</span> userName<span class="token operator">=</span><span class="token string">'java12345'</span> <span class="token keyword">WHERE</span> id<span class="token operator">=</span>bookId<span class="token punctuation">;</span>
+           <span class="token keyword">WHEN</span> <span class="token number">2</span> <span class="token keyword">THEN</span> <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> t_user <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token boolean">NULL</span><span class="token punctuation">,</span><span class="token string">'2312312'</span><span class="token punctuation">,</span><span class="token string">'23221312'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+           <span class="token keyword">ELSE</span> <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> t_user <span class="token keyword">VALUES</span><span class="token punctuation">(</span><span class="token boolean">NULL</span><span class="token punctuation">,</span><span class="token string">'2312312123321'</span><span class="token punctuation">,</span><span class="token string">'232213121231132'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+           <span class="token keyword">END</span> <span class="token keyword">CASE</span><span class="token punctuation">;</span>
+      <span class="token keyword">END</span>
+      <span class="token operator">&amp;&amp;</span>
+<span class="token keyword">DELIMITER</span> <span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="14-3-（LOOP，LEAVE-语句）"><a href="#14-3-（LOOP，LEAVE-语句）" class="headerlink" title="14.3 （LOOP，LEAVE 语句）"></a>14.3 （LOOP，LEAVE 语句）</h5><p>==LOOP,LEAVE语句：LOOP 语句可以使某些特定的语句重复执行，实现一个简单的循环。但是 LOOP 语句本身没有停止循环的语句，必须是遇到 LEAVE 语句等才能停止循环。==</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">DELIMITER</span> <span class="token operator">&amp;&amp;</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> pro_user7<span class="token punctuation">(</span><span class="token operator">IN</span> totalNum <span class="token keyword">INT</span><span class="token punctuation">)</span>
+      <span class="token keyword">BEGIN</span>
+         <span class="token number">aaa</span>:LOOP
+            <span class="token keyword">SET</span> totalNum<span class="token operator">=</span>totalNum<span class="token number">-1</span><span class="token punctuation">;</span>
+            <span class="token keyword">IF</span> totalNum<span class="token operator">=</span><span class="token number">0</span> <span class="token keyword">THEN</span> LEAVE <span class="token number">aaa</span><span class="token punctuation">;</span>
+            <span class="token keyword">ELSE</span> <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> t_user <span class="token keyword">VALUES</span><span class="token punctuation">(</span>totalNum<span class="token punctuation">,</span><span class="token string">'2312312'</span><span class="token punctuation">,</span><span class="token string">'23221312'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">END</span> <span class="token keyword">IF</span> <span class="token punctuation">;</span>
+         <span class="token keyword">END</span> LOOP <span class="token number">aaa</span><span class="token punctuation">;</span>
+      <span class="token keyword">END</span>
+      <span class="token operator">&amp;&amp;</span>
+<span class="token keyword">DELIMITER</span> <span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="14-4（ITERATE-语句）"><a href="#14-4（ITERATE-语句）" class="headerlink" title="14.4（ITERATE 语句）"></a>14.4（ITERATE 语句）</h5><p><strong>ITERATE 语句：ITERATE 语句也是用来跳出循环的语句。但是，ITERATE 语句是跳出本次循环，然后直接进入下一次循环。</strong></p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">DELIMITER</span> <span class="token operator">&amp;&amp;</span>（ITERATE 语句：ITERATE 语句也是用来跳出循环的语句。但是，ITERATE 语句是跳出本次循环，然后直接进入下一次循环。）
+<span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> pro_user8<span class="token punctuation">(</span><span class="token operator">IN</span> totalNum <span class="token keyword">INT</span><span class="token punctuation">)</span>
+      <span class="token keyword">BEGIN</span>
+         <span class="token number">aaa</span>:LOOP
+            <span class="token keyword">SET</span> totalNum<span class="token operator">=</span>totalNum<span class="token number">-1</span><span class="token punctuation">;</span>
+            <span class="token keyword">IF</span> totalNum<span class="token operator">=</span><span class="token number">0</span> <span class="token keyword">THEN</span> LEAVE <span class="token number">aaa</span><span class="token punctuation">;</span>
+            ELSEIF totalNum<span class="token operator">=</span><span class="token number">3</span> <span class="token keyword">THEN</span> ITERATE <span class="token number">aaa</span><span class="token punctuation">;</span>
+            <span class="token keyword">END</span> <span class="token keyword">IF</span> <span class="token punctuation">;</span>
+            <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> t_user <span class="token keyword">VALUES</span><span class="token punctuation">(</span>totalNum<span class="token punctuation">,</span><span class="token string">'2312312'</span><span class="token punctuation">,</span><span class="token string">'23221312'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token keyword">END</span> LOOP <span class="token number">aaa</span><span class="token punctuation">;</span>
+      <span class="token keyword">END</span>
+      <span class="token operator">&amp;&amp;</span>
+<span class="token keyword">DELIMITER</span> <span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="14-5（REPEAT-语句）"><a href="#14-5（REPEAT-语句）" class="headerlink" title="14.5（REPEAT 语句）"></a>14.5（REPEAT 语句）</h5><p><strong>REPEAT 语句：REPEAT 语句是有条件控制的循环语句。当满足特定条件时，就会跳出循环语句。</strong></p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">DELIMITER</span> <span class="token operator">&amp;&amp;</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> pro_user9<span class="token punctuation">(</span><span class="token operator">IN</span> totalNum <span class="token keyword">INT</span><span class="token punctuation">)</span>
+      <span class="token keyword">BEGIN</span>
+         REPEAT
+            <span class="token keyword">SET</span> totalNum<span class="token operator">=</span>totalNum<span class="token number">-1</span><span class="token punctuation">;</span>
+            <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> t_user <span class="token keyword">VALUES</span><span class="token punctuation">(</span>totalNum<span class="token punctuation">,</span><span class="token string">'2312312'</span><span class="token punctuation">,</span><span class="token string">'23221312'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            UNTIL totalNum<span class="token operator">=</span><span class="token number">1</span>
+         <span class="token keyword">END</span> REPEAT <span class="token punctuation">;</span>
+      <span class="token keyword">END</span>
+      <span class="token operator">&amp;&amp;</span>
+<span class="token keyword">DELIMITER</span> <span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="14-6（WHILE-语句）"><a href="#14-6（WHILE-语句）" class="headerlink" title="14.6（WHILE 语句）"></a>14.6（WHILE 语句）</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">DELIMITER</span> <span class="token operator">&amp;&amp;</span><span class="token comment" spellcheck="true">//WHILE 语句</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> pro_user10<span class="token punctuation">(</span><span class="token operator">IN</span> totalNum <span class="token keyword">INT</span><span class="token punctuation">)</span>
+      <span class="token keyword">BEGIN</span>
+         <span class="token keyword">WHILE</span> totalNum<span class="token operator">></span><span class="token number">0</span> <span class="token keyword">DO</span>
+             <span class="token keyword">INSERT</span> <span class="token keyword">INTO</span> t_user <span class="token keyword">VALUES</span><span class="token punctuation">(</span>totalNum<span class="token punctuation">,</span><span class="token string">'2312312'</span><span class="token punctuation">,</span><span class="token string">'23221312'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+             <span class="token keyword">SET</span> totalNum<span class="token operator">=</span>totalNum<span class="token number">-1</span><span class="token punctuation">;</span>
+         <span class="token keyword">END</span> <span class="token keyword">WHILE</span><span class="token punctuation">;</span>
+      <span class="token keyword">END</span>
+      <span class="token operator">&amp;&amp;</span>
+<span class="token keyword">DELIMITER</span> <span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="14-6-查看存储过程和函数-还可以在系统表中查看"><a href="#14-6-查看存储过程和函数-还可以在系统表中查看" class="headerlink" title="14.6 查看存储过程和函数(还可以在系统表中查看)"></a>14.6 查看存储过程和函数(还可以在系统表中查看)</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SHOW</span> <span class="token keyword">PROCEDURE</span> <span class="token keyword">STATUS</span> <span class="token operator">LIKE</span> <span class="token string">'pro_book'</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//查看存储过程和函数的状态</span>
+<span class="token keyword">SHOW</span> <span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> pro_book<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//语句查看存储过程的函数的定义</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="14-7-修改存储过程和函数"><a href="#14-7-修改存储过程和函数" class="headerlink" title="14.7 修改存储过程和函数"></a>14.7 修改存储过程和函数</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">PROCEDURE</span> pro_book <span class="token keyword">COMMENT</span> <span class="token string">'我来测试一下comment'</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//修改存储过程和函数</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="14-8-删除存储过程和函数"><a href="#14-8-删除存储过程和函数" class="headerlink" title="14.8 删除存储过程和函数"></a>14.8 删除存储过程和函数</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">PROCEDURE</span> pro_user10<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//删除存储过程和函数</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -529,7 +596,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://github.com/Lelege0/2019/12/06/JDBC%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E9%A9%B1%E5%8A%A8/">https://github.com/Lelege0/2019/12/06/JDBC%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E9%A9%B1%E5%8A%A8/</a>
+                    <a href="https://github.com/Lelege0/2020/02/24/MySQL%EF%BC%88%E5%AE%8C%EF%BC%89/">https://github.com/Lelege0/2020/02/24/MySQL%EF%BC%88%E5%AE%8C%EF%BC%89/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -567,16 +634,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/JDBC/">
-                                    <span class="chip bg-color">JDBC</span>
-                                </a>
-                            
                                 <a href="/tags/Java/">
                                     <span class="chip bg-color">Java</span>
                                 </a>
                             
                                 <a href="/tags/Mysql/">
                                     <span class="chip bg-color">Mysql</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                    <span class="chip bg-color">数据库</span>
                                 </a>
                             
                         </div>
@@ -622,7 +689,7 @@
         repo: 'Lelege0.github.io',
         owner: 'Lelege0',
         admin: ["Lelege0"],
-        id: '2019-12-06T17-41-53',
+        id: '2020-02-24T12-05-10',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -647,35 +714,32 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2019/12/09/Tomcat%E5%9C%A8Eclipse%E9%83%A8%E7%BD%B2%E5%AE%8C%E6%88%90%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%90%AF%E5%8A%A8%EF%BC%8C%E4%BD%86%E6%98%AF%E8%BF%90%E8%A1%8C%E6%97%B6404%EF%BC%81/">
+                <a href="/2020/02/24/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%8B%EF%BC%89/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Tomcat在Eclipse部署完成也可以启动，但是运行时404！">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="MySQL数据库基础（下）">
                         
-                        <span class="card-title">Tomcat在Eclipse部署完成也可以启动，但是运行时404！</span>
+                        <span class="card-title">MySQL数据库基础（下）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Tomcat在Eclipse部署完成也可以启动，但是运行时404（运行startup.bat可以运行程序）！默认情况是如下图==默认部署时打开tomcat时所有选项都是不可选的，都是灰色的，此时要清除部署直接删除或者右键点击tomcat之后
+                            11.MySQL 常用函数日期和时间函数SELECT CURDATE(),CURTIME(),MONTH(birthday) AS m FROM t_data;//返回当前日期，时间，返回birthday中的月份值
+字符串函数SELECT 
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-09
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-24
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Tomcat/" class="post-category">
-                                    Tomcat
-                                </a>
-                            
-                            <a href="/categories/Tomcat/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    数据库
                                 </a>
                             
                             
@@ -685,12 +749,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Tomcat/">
-                        <span class="chip bg-color">Tomcat</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/Web%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                        <span class="chip bg-color">Web应用服务器</span>
+                    <a href="/tags/Mysql/">
+                        <span class="chip bg-color">Mysql</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
                     </a>
                     
                 </div>
@@ -704,25 +772,24 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/12/06/SpringBoot%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">
+                <a href="/2020/02/22/SpringBoot%E4%B8%8E%E6%B6%88%E6%81%AF/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="SpringBoot基础（一）">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="SpringBoot与消息">
                         
-                        <span class="card-title">SpringBoot基础（一）</span>
+                        <span class="card-title">SpringBoot与消息</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1.SpringBoot简介Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来简化新Spring应用的初始搭建以及开发过程。该框架使用了特定的方式来进行配置，从而使开发人员不再需要定义样板化的配置。
-1.1pom文
+                            一、概述1、在大多数应用中，我们系统之间需要进行异步通信，即异步消息2、异步消息中两个重要概念：        消息代理（message broker）和目的地（destination）消息代理： 是一种在数据源与目的地之间移动数据使信息处
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-22
                             </span>
                         <span class="publish-author">
                             
@@ -732,8 +799,8 @@
                                     Java
                                 </a>
                             
-                            <a href="/categories/Java/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
+                            <a href="/categories/Java/RabbitMQ/" class="post-category">
+                                    RabbitMQ
                                 </a>
                             
                             
@@ -747,8 +814,8 @@
                         <span class="chip bg-color">SpringBoot</span>
                     </a>
                     
-                    <a href="/tags/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/">
-                        <span class="chip bg-color">后端框架</span>
+                    <a href="/tags/%E6%B6%88%E6%81%AF/">
+                        <span class="chip bg-color">消息</span>
                     </a>
                     
                 </div>
