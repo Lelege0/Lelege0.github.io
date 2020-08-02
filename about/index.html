@@ -335,21 +335,21 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">16</a></span>
+    <span class="count"><a href="/">21</a></span>
     <span class="name">Posts</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">15</a></span>
+    <span class="count"><a href="/categories">16</a></span>
     <span class="name">Categories</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">18</a></span>
+    <span class="count"><a href="/tags">21</a></span>
     <span class="name">Tags</span>
 </div>
 
@@ -365,21 +365,21 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">16</a></span>
+    <span class="count"><a href="/">21</a></span>
     <span class="name">Posts</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">15</a></span>
+    <span class="count"><a href="/categories">16</a></span>
     <span class="name">Categories</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">18</a></span>
+    <span class="count"><a href="/tags">21</a></span>
     <span class="name">Tags</span>
 </div>
 
@@ -513,7 +513,7 @@
         },
         xAxis: {
             type: 'category',
-            data: ["2019-02","2019-03","2019-04","2019-05","2019-06","2019-07","2019-08","2019-09","2019-10","2019-11","2019-12","2020-01","2020-02"]
+            data: ["2019-08","2019-09","2019-10","2019-11","2019-12","2020-01","2020-02","2020-03","2020-04","2020-05","2020-06","2020-07","2020-08"]
         },
         yAxis: {
             type: 'value',
@@ -523,7 +523,7 @@
                 name: 'Number of posts',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,8,0,8],
+                data: [0,0,0,0,8,0,8,0,0,0,0,0,5],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -565,7 +565,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"Java","value":9},{"name":"数据库","value":5},{"name":"后端","value":6},{"name":"RabbitMQ","value":1},{"name":"cache","value":1},{"name":"MyBatis","value":1},{"name":"数据库","value":1},{"name":"Tomcat","value":1},{"name":"JDBC","value":1},{"name":"前端","value":1},{"name":"redis","value":1},{"name":"SpringData JPA","value":1},{"name":"MySql","value":1},{"name":"前端","value":1},{"name":"MySql","value":1}],
+                data: [{"name":"JavaEE","value":2},{"name":"Java","value":9},{"name":"数据库","value":8},{"name":"后端","value":6},{"name":"数据库","value":1},{"name":"cache","value":1},{"name":"JDBC","value":1},{"name":"MyBatis","value":1},{"name":"RabbitMQ","value":1},{"name":"redis","value":1},{"name":"Tomcat","value":1},{"name":"SpringData JPA","value":1},{"name":"MySql","value":1},{"name":"前端","value":1},{"name":"MySql","value":1},{"name":"前端","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -589,7 +589,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["Java","Mysql","SpringBoot","数据库","JDBC","MySql","后端","后端框架","消息","缓存"]
+                data: ["Java","数据库","Mysql","SpringBoot","MyBatis","JavaEE","Servlet","Cookie","JDBC","MySql"]
             }
         ],
         yAxis: [
@@ -602,7 +602,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [8,6,6,5,2,2,1,1,1,1],
+                data: [11,8,6,6,4,2,2,2,2,2],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -719,6 +719,24 @@
         <div class="tag-chips center-align">
             
             
+            <a href="/tags/JavaEE/">
+                <span class="chip center-align waves-effect waves-light chip-default">JavaEE</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Servlet/">
+                <span class="chip center-align waves-effect waves-light chip-default">Servlet</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Cookie/">
+                <span class="chip center-align waves-effect waves-light chip-default">Cookie</span>
+            </a>
+            
+            
+            
             <a href="/tags/JDBC/">
                 <span class="chip center-align waves-effect waves-light chip-default">JDBC</span>
             </a>
@@ -739,6 +757,12 @@
             
             
             
+            <a href="/tags/MyBatis/">
+                <span class="chip center-align waves-effect waves-light chip-default">MyBatis</span>
+            </a>
+            
+            
+            
             <a href="/tags/%E5%90%8E%E7%AB%AF/">
                 <span class="chip center-align waves-effect waves-light chip-default">后端</span>
             </a>
@@ -751,26 +775,14 @@
             
             
             
-            <a href="/tags/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/">
-                <span class="chip center-align waves-effect waves-light chip-default">后端框架</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E6%B6%88%E6%81%AF/">
-                <span class="chip center-align waves-effect waves-light chip-default">消息</span>
-            </a>
-            
-            
-            
             <a href="/tags/%E7%BC%93%E5%AD%98/">
                 <span class="chip center-align waves-effect waves-light chip-default">缓存</span>
             </a>
             
             
             
-            <a href="/tags/SpringData-JPA/">
-                <span class="chip center-align waves-effect waves-light chip-default">SpringData JPA</span>
+            <a href="/tags/DruidDataSource/">
+                <span class="chip center-align waves-effect waves-light chip-default">DruidDataSource</span>
             </a>
             
             
@@ -781,8 +793,8 @@
             
             
             
-            <a href="/tags/MyBatis/">
-                <span class="chip center-align waves-effect waves-light chip-default">MyBatis</span>
+            <a href="/tags/%E6%B6%88%E6%81%AF/">
+                <span class="chip center-align waves-effect waves-light chip-default">消息</span>
             </a>
             
             
@@ -799,8 +811,14 @@
             
             
             
-            <a href="/tags/DruidDataSource/">
-                <span class="chip center-align waves-effect waves-light chip-default">DruidDataSource</span>
+            <a href="/tags/SpringData-JPA/">
+                <span class="chip center-align waves-effect waves-light chip-default">SpringData JPA</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E5%90%8E%E7%AB%AF%E6%A1%86%E6%9E%B6/">
+                <span class="chip center-align waves-effect waves-light chip-default">后端框架</span>
             </a>
             
             
@@ -907,7 +925,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">18.5k</span>&nbsp;字
+                class="white-color">26.1k</span>&nbsp;字
             
             
             
