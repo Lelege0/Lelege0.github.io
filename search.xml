@@ -353,9 +353,9 @@
             
             <tag> SpringBoot </tag>
             
-            <tag> MySql </tag>
-            
             <tag> SpringData JPA </tag>
+            
+            <tag> MySql </tag>
             
         </tags>
       
