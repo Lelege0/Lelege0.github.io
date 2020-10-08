@@ -78,9 +78,9 @@
       
         <tags>
             
-            <tag> Java </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> Java </tag>
             
             <tag> MyBatis </tag>
             
@@ -107,9 +107,9 @@
       
         <tags>
             
-            <tag> Java </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> Java </tag>
             
             <tag> MyBatis </tag>
             
@@ -136,9 +136,9 @@
       
         <tags>
             
-            <tag> Java </tag>
-            
             <tag> 数据库 </tag>
+            
+            <tag> Java </tag>
             
             <tag> MyBatis </tag>
             
@@ -165,11 +165,11 @@
       
         <tags>
             
+            <tag> 数据库 </tag>
+            
             <tag> Java </tag>
             
             <tag> Mysql </tag>
-            
-            <tag> 数据库 </tag>
             
         </tags>
       
@@ -194,11 +194,11 @@
       
         <tags>
             
+            <tag> 数据库 </tag>
+            
             <tag> Java </tag>
             
             <tag> Mysql </tag>
-            
-            <tag> 数据库 </tag>
             
         </tags>
       
@@ -223,11 +223,11 @@
       
         <tags>
             
+            <tag> 数据库 </tag>
+            
             <tag> Java </tag>
             
             <tag> Mysql </tag>
-            
-            <tag> 数据库 </tag>
             
         </tags>
       
@@ -353,9 +353,9 @@
             
             <tag> SpringBoot </tag>
             
-            <tag> SpringData JPA </tag>
-            
             <tag> MySql </tag>
+            
+            <tag> SpringData JPA </tag>
             
         </tags>
       
@@ -415,11 +415,11 @@
       
         <tags>
             
+            <tag> 数据库 </tag>
+            
             <tag> Java </tag>
             
             <tag> Mysql </tag>
-            
-            <tag> 数据库 </tag>
             
         </tags>
       
@@ -444,11 +444,11 @@
       
         <tags>
             
+            <tag> 数据库 </tag>
+            
             <tag> Java </tag>
             
             <tag> Mysql </tag>
-            
-            <tag> 数据库 </tag>
             
         </tags>
       
@@ -560,11 +560,11 @@
       
         <tags>
             
-            <tag> JDBC </tag>
-            
             <tag> Java </tag>
             
             <tag> Mysql </tag>
+            
+            <tag> JDBC </tag>
             
         </tags>
       
