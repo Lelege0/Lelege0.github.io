@@ -407,12 +407,33 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/SpringBoot/">
+                                <span class="chip bg-color">SpringBoot</span>
+                            </a>
+                        
+                            <a href="/tags/JAVA/">
+                                <span class="chip bg-color">JAVA</span>
+                            </a>
+                        
+                            <a href="/tags/Swagger2/">
+                                <span class="chip bg-color">Swagger2</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Swagger2/" class="post-category">
+                                Swagger2
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -428,7 +449,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-05-26
+                    2022-06-10
                 </div>
                 
 
@@ -528,7 +549,7 @@
         <span class="token keyword">return</span> <span class="token string">"Hello World!"</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>==Swagger 2注解解释==</strong><br>| 注解 | 作用      |参数|<br>|——–| ——–|————-|<br>| ==@Api== | 表示标识这个类是swagger的资源  | <strong>1.tags=”说明该类的作用，可以在UI界面上看到的注解”  <br>2.value=”该参数没什么意义，在UI界面上也看到，所以不需要配置”</strong>|<br>|==@ApiOperation==|用在请求的方法上，说明方法的用途、作用，表示一个http请求的操作 |<strong>value=”说明方法的用途、作用”<br> notes=”方法的备注说明”</strong>|<br>|@ApiImplicitParams|<strong>用在请求的方法上，表示一组参数说明，用于方法，包含多个 @ApiImplicitParam</strong>|name–参数ming <br>value–参数说明 <br>dataType–数据类型 <br>paramType–参数类型 <br>example–举例说明|<br>|@ApiImplicitParam|<strong>用在@ApiImplicitParams注解中，指定一个请求参数的各个方面，表示单独的请求参数</strong> |        name：参数的汉字说明、解释 <br> value：参数名 <br> required：参数是否必须传<br> paramType：参数放在哪个地方<br> header： 请求参数的获取：|<br>|==@ApiIgnore==|用于类，方法，方法参数表示这个方法或者类被忽略 ,可以不被swagger显示在页面上  ||<br>|@RequestHeader|指定请求类型|query：请求参数的获取：|<br>|@ApiParam|用于方法，参数，字段说明；表示对参数的添加元数据（说明或是否必填等|name–参数名<br> value–参数说明<br>required–是否必填|<br>|@PathVariable|是获取get方式，url后面参数，进行参数绑定，对应path  |body（不常用）form（不常用）    dataType：参数类型，默认String，其它值dataType=”Integer”       defaultValue：参数的默认值||<br>|@ApiResponses|用在请求的方法上，表示一组响应|code    http的状态码<br>message    描述<br>response    默认响应类 Void<br>reference    参考ApiOperation中配置<br>responseHeaders    参考 ResponseHeader 属性配置说明 <br>responseContainer    参考ApiOperation中配置|<br>|@ApiResponse|用在@ApiResponses中，一般用于表达一个错误的响应信息|code：数字，例如400 <br>message：信息，例如”请求参数没填好”  <br>response：抛出异常的类|<br>|==@ApiModel==|<strong>用于响应类上，表示一个返回响应数据的信息这种一般用在post创建的时候，使用@RequestBody这样的场景，请求参数无法使用@ApiImplicitParam注解进行描述的时候)表示对类进行说明，用于参数用实体类接收</strong> |暂无|<br>|@ApiModelProperty|表示对model属性的说明或者数据操作更改 |value–字段说明 <br>name–重写属性名字 <br>dataType–重写属性类型 <br>required–是否必填 <br>example–举例说明 <br>hidden–隐藏|<br>|==@ResponseHeader==|用于方法上，设置响应头|name    响应头名称<br>description    头描述<br>response    默认响应类 Void<br>responseContainer    参考ApiOperation中配置|</p>
+<p><strong>==Swagger 2注解解释==</strong><br>| 注解 | 作用      |参数|<br>|:——–:|:——–:|:————-:|<br>| ==@Api== | 表示标识这个类是swagger的资源  | <strong>1.tags=”说明该类的作用，可以在UI界面上看到的注解”  <br>2.value=”该参数没什么意义，在UI界面上也看到，所以不需要配置”</strong>|<br>|==@ApiOperation==|用在请求的方法上，说明方法的用途、作用，表示一个http请求的操作 |<strong>value=”说明方法的用途、作用”<br> notes=”方法的备注说明”</strong>|<br>|@ApiImplicitParams|<strong>用在请求的方法上，表示一组参数说明，用于方法，包含多个 @ApiImplicitParam</strong>|name–参数ming <br>value–参数说明 <br>dataType–数据类型 <br>paramType–参数类型 <br>example–举例说明|<br>|@ApiImplicitParam|<strong>用在@ApiImplicitParams注解中，指定一个请求参数的各个方面，表示单独的请求参数</strong> |        name：参数的汉字说明、解释 <br> value：参数名 <br> required：参数是否必须传<br> paramType：参数放在哪个地方<br> header： 请求参数的获取：|<br>|==@ApiIgnore==|用于类，方法，方法参数表示这个方法或者类被忽略 ,可以不被swagger显示在页面上  |<br>|@RequestHeader|指定请求类型|query：请求参数的获取：|<br>|@ApiParam|用于方法，参数，字段说明；表示对参数的添加元数据（说明或是否必填等|name–参数名<br> value–参数说明<br>required–是否必填|<br>|@PathVariable|是获取get方式，url后面参数，进行参数绑定，对应path  |body（不常用）form（不常用）    dataType：参数类型，默认String，其它值dataType=”Integer”       defaultValue：参数的默认值||<br>|@ApiResponses|用在请求的方法上，表示一组响应|code    http的状态码<br>message    描述<br>response    默认响应类 Void<br>reference    参考ApiOperation中配置<br>responseHeaders    参考 ResponseHeader 属性配置说明 <br>responseContainer    参考ApiOperation中配置|<br>|@ApiResponse|用在@ApiResponses中，一般用于表达一个错误的响应信息|code：数字，例如400 <br>message：信息，例如”请求参数没填好”  <br>response：抛出异常的类|<br>|==@ApiModel==|<strong>用于响应类上，表示一个返回响应数据的信息这种一般用在post创建的时候，使用@RequestBody这样的场景，请求参数无法使用@ApiImplicitParam注解进行描述的时候)表示对类进行说明，用于参数用实体类接收</strong> |暂无|<br>|@ApiModelProperty|表示对model属性的说明或者数据操作更改 |value–字段说明 <br>name–重写属性名字 <br>dataType–重写属性类型 <br>required–是否必填 <br>example–举例说明 <br>hidden–隐藏|<br>|==@ResponseHeader==|用于方法上，设置响应头|name    响应头名称<br>description    头描述<br>response    默认响应类 Void<br>responseContainer    参考ApiOperation中配置|</p>
 <p>==黄色为常用注解==</p>
 <h5 id="2-4启动应用访问swagger-ui"><a href="#2-4启动应用访问swagger-ui" class="headerlink" title="2.4启动应用访问swagger-ui"></a>2.4启动应用访问swagger-ui</h5><p>浏览器输入 <a href="http://localhost:8086/swagger-ui.html" target="_blank" rel="noopener">http://localhost:8086/swagger-ui.html</a><br><strong>8086为你的应用启动的端口号</strong><br><img src="https://img-blog.csdnimg.cn/20201130213918307.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="web访问swagger"><br><strong>==用法：==</strong><br><img src="https://img-blog.csdnimg.cn/20201130214224641.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20201130214958185.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70" alt="执行结果"><br>以上就是SpringBoot集成Swagger 2的全部了，希望大家能够get，有问题请及时批评斧正！！！</p>
 <script>
@@ -611,7 +632,19 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/SpringBoot/">
+                                    <span class="chip bg-color">SpringBoot</span>
+                                </a>
+                            
+                                <a href="/tags/JAVA/">
+                                    <span class="chip bg-color">JAVA</span>
+                                </a>
+                            
+                                <a href="/tags/Swagger2/">
+                                    <span class="chip bg-color">Swagger2</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
