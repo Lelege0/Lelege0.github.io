@@ -477,9 +477,10 @@
 <li>Docker有着比虚拟机更少的抽象层。由于docker不需要<a href="https://baike.baidu.com/item/hypervisor/3353492?fr=aladdin" target="_blank" rel="noopener">Hypervisor</a> <code>虚拟机监视器，是用来建立与执行虚拟机器的软件、固件或硬件。提供虚拟的作业平台来执行客体操作系统（guest operating systems），负责管理其他客体操作系统的执行阶段；这些客体操作系统，共同分享虚拟化后的硬件资源。</code>实现硬件资源虚拟化，运行在docker容器上的程序直接使用的都是实际物理机的硬件资源。因此在CPU、内存利用率上docker将会在效率上有明显优势。</li>
 <li>Docker利用的是宿主机的内核，而不需Cuest OS<code>客体操作系统</code>。因此，当新建一个容器时，docker不需要和虚拟机一样的重新加载一个操作系统内核。仍而避免引寻、加载操作系统内核反个比较费时费资源的过程，当新建一个虚拟机时，虚拟机软件需要加载Guest OS，返个新建过程是==分钟级别==的。而docker由于直接利用宿主机的操作系统，则省略了返个过程，因此新建一个docker容器只需要==几秒钟==。</li>
 <li><img src="https://img-blog.csdnimg.cn/20200930092421497.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70#pic_center" alt="虚拟机、docker对比"></li>
-<li> Docker容器  | 虚拟机(VM) </li>
-<li>——-| ————-| —————-<br>操作系统 | 与宿主机共享OS | 宿主机OS上运行虚拟机OS<br>存储大小|镜像小，便于存储和传输|镜像庞大(vmdk\vdi)等<br>运行性能|几乎无额外性能损失|操作系统额外的CPU、内存消耗<br>移植性|轻便、灵活，适应于Linux|笨重，与虚拟化技术耦合度高<br>硬件亲和性|面向软件开发者|面向硬件运维者<br>部署速度|快速，秒级|较慢，10s以上</li>
 </ul>
+<blockquote>
+<p>|Docker容器 |虚拟机(VM) |<br>|——–| ————-| —————-|<br>|操作系统 | 与宿主机共享OS | 宿主机OS上运行虚拟机OS|<br>|存储大小|镜像小，便于存储和传输|镜像庞大(vmdk\vdi)等|<br>|运行性能|几乎无额外性能损失|操作系统额外的CPU、内存消耗|<br>|移植性|轻便、灵活，适应于Linux|笨重，与虚拟化技术耦合度高|<br>|硬件亲和性|面向软件开发者|面向硬件运维者|<br>|部署速度|快速，秒级|较慢，10s以上|</p>
+</blockquote>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {

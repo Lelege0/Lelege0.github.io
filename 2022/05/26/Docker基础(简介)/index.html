@@ -511,8 +511,25 @@ Docker是基于 Go语言实现的云开源项目；
 </ul>
 <p>2.仓库：</p>
 <ul>
-<li>Docker hub官网：<a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker hub官网</a><h4 id="二、Docker三要素-（镜像、容器、仓库）"><a href="#二、Docker三要素-（镜像、容器、仓库）" class="headerlink" title="二、Docker三要素 （镜像、容器、仓库）"></a>二、Docker三要素 （镜像、容器、仓库）</h4>Docker本身是一个容器运行载体或称之为管理引擎。我们把应用程序和配置依赖打包形成一个可交付的运行环境，这个打包好的运行环境就似乎一个Image镜像文件。只有通过这个镜像文件才能生成Docker容器。Image文件可以看作是容器的模板。Docker根据image文件生成容器实例。<strong>同一个镜像文件可以同时运行多个容器实例。</strong><br>Docker的结构图：<br><img src="https://img-blog.csdnimg.cn/20200928160152628.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70#pic_center" alt="Docker的架构图"><h5 id="2-1镜像-Image"><a href="#2-1镜像-Image" class="headerlink" title="2.1镜像(Image)"></a>2.1镜像(Image)</h5>Docker镜（Image）就是一个只读的模板。镜像可以用来创建Docker容器，<strong>一个镜像可以创建很多的容器。</strong><br>容器与镜像的关系类似面向对象中的对象和类：<br>Docker |  面向对象  </li>
-<li>——-|————-<br>容器 | 对象<br>镜像 | 类<h5 id="2-2容器-Container"><a href="#2-2容器-Container" class="headerlink" title="2.2容器(Container)"></a>2.2容器(Container)</h5></li>
+<li>Docker hub官网：<a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker hub官网</a><h4 id="二、Docker三要素-（镜像、容器、仓库）"><a href="#二、Docker三要素-（镜像、容器、仓库）" class="headerlink" title="二、Docker三要素 （镜像、容器、仓库）"></a>二、Docker三要素 （镜像、容器、仓库）</h4>Docker本身是一个容器运行载体或称之为管理引擎。我们把应用程序和配置依赖打包形成一个可交付的运行环境，这个打包好的运行环境就似乎一个Image镜像文件。只有通过这个镜像文件才能生成Docker容器。Image文件可以看作是容器的模板。Docker根据image文件生成容器实例。<strong>同一个镜像文件可以同时运行多个容器实例。</strong><br>Docker的结构图：<br><img src="https://img-blog.csdnimg.cn/20200928160152628.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzc1MDM0,size_16,color_FFFFFF,t_70#pic_center" alt="Docker的架构图"><h5 id="2-1镜像-Image"><a href="#2-1镜像-Image" class="headerlink" title="2.1镜像(Image)"></a>2.1镜像(Image)</h5>Docker镜（Image）就是一个只读的模板。镜像可以用来创建Docker容器，<strong>一个镜像可以创建很多的容器。</strong><br>容器与镜像的关系类似面向对象中的对象和类：<blockquote>
+<table>
+<thead>
+<tr>
+<th>Docker</th>
+<th>面向对象</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>容器</td>
+<td>对象</td>
+</tr>
+<tr>
+<td>镜像</td>
+<td>类</td>
+</tr>
+</tbody></table>
+</blockquote>
+<h5 id="2-2容器-Container"><a href="#2-2容器-Container" class="headerlink" title="2.2容器(Container)"></a>2.2容器(Container)</h5></li>
 </ul>
 <ol>
 <li>Docker利用容器(Container)独立运行的一个或一组应用。容器使用镜像创建的运行实例。它可以被启动、开始、停止、删除。每个容器都是相互隔离的、保证安全的平台。<strong>可以把容器看做是一个简易版的Linux环境和运行在其中的应用程序。</strong> 容器的定义和镜像几乎一摸一样，也是一堆层的统一视角，==<strong>唯一区别就是最上面那一层是可读可写的</strong>==</li>
