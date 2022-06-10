@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Linux查看端口占用，强制释放占用端口, 乐乐哥">
-    <meta name="description" content="1.查看所有端口占用情况netstat命令各个参数说明如下| Column 1 | Column 2      ||:——–:| :————-:|| -t |指明显示TCP端口||-u | 指明显示UDP端口|| -l |仅显示监听套接字(">
+    <meta name="description" content="1.查看所有端口占用情况netstat命令各个参数说明如下 Column 1 | Column 2——–| ————- -t |指明显示TCP端口-u | 指明显示UDP端口 -l |仅显示监听套接字(所谓套接字就是使应用程序能够读写与收发">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -446,14 +446,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-05-26
+                    2022-06-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    385
+                    384
                 </div>
                 
 
@@ -476,7 +476,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="1-查看所有端口占用情况"><a href="#1-查看所有端口占用情况" class="headerlink" title="1.查看所有端口占用情况"></a>1.查看所有端口占用情况</h5><p><strong><em>netstat命令各个参数说明如下</em></strong><br>| Column 1 | Column 2      |<br>|:——–:| :————-:|<br>| -t |指明显示TCP端口|<br>|-u | 指明显示UDP端口|<br>| -l |仅显示监听套接字(所谓套接字就是使应用程序能够读写与收发通讯协议(protocol)与资料的程序)|<br>| -p |显示进程标识符和程序名称，每一个套接字/端口都属于一个程序。|<br>| -n |不进行DNS轮询，显示IP(可以加速操作)|</p>
+                <h5 id="1-查看所有端口占用情况"><a href="#1-查看所有端口占用情况" class="headerlink" title="1.查看所有端口占用情况"></a>1.查看所有端口占用情况</h5><p><strong><em>netstat命令各个参数说明如下</em></strong><br> Column 1 | Column 2<br>——–| ————-<br> -t |指明显示TCP端口<br>-u | 指明显示UDP端口<br> -l |仅显示监听套接字(所谓套接字就是使应用程序能够读写与收发通讯协议(protocol)与资料的程序)<br> -p |显示进程标识符和程序名称，每一个套接字/端口都属于一个程序。<br> -n |不进行DNS轮询，显示IP(可以加速操作)</p>
 <h6 id="1-1查看TCP类型的端口占用情况"><a href="#1-1查看TCP类型的端口占用情况" class="headerlink" title="1.1查看TCP类型的端口占用情况"></a>1.1查看TCP类型的端口占用情况</h6><ul>
 <li>netstat -tln</li>
 <li>netstat -ntpl<h6 id="1-2查看UDP类型的端口占用情况"><a href="#1-2查看UDP类型的端口占用情况" class="headerlink" title="1.2查看UDP类型的端口占用情况"></a>1.2查看UDP类型的端口占用情况</h6></li>
@@ -484,7 +484,7 @@
 <li>netstat -tunlp<h5 id="2查看给定端口的使用情况"><a href="#2查看给定端口的使用情况" class="headerlink" title="2查看给定端口的使用情况"></a>2查看给定端口的使用情况</h5></li>
 <li>lsof -i:端口号</li>
 </ul>
-<p><em><strong>lsof -i 用以显示符合条件的进程情况，lsof(list open files)是一个列出当前系统打开文件的工具。</strong></em><br>以root用户来执行lsof -i命令，如下图,lsof输出的每列的意义是：<br>| 列名 |    意义      |<br>|:——–:| :————-:|<br>|COMMAND|进程的名称或者进程开启的方式|<br>|PID|进程id|<br>|USER|进程所有者|<br>|FD|文件描述符|<br>|TYPE|协议类型|<br>|DEVICE|端口号|<br>|SIZE/OFF|偏移|<br>|NODE|协议名|<br>|NAME|节点名|</p>
+<p><em><strong>lsof -i 用以显示符合条件的进程情况，lsof(list open files)是一个列出当前系统打开文件的工具。</strong></em><br>以root用户来执行lsof -i命令，如下图,lsof输出的每列的意义是：<br>列名 |    意义<br>——–|————-<br>COMMAND|进程的名称或者进程开启的方式<br>PID|进程id<br>USER|进程所有者<br>FD|文件描述符<br>TYPE|协议类型<br>DEVICE|端口号<br>SIZE/OFF|偏移<br>NODE|协议名<br>NAME|节点名</p>
 <ul>
 <li>netstat -tunlp|grep 端口号</li>
 <li>netstat -ntulp |grep 端口号<h5 id="3-杀掉占用端口的进程，依据pid杀掉"><a href="#3-杀掉占用端口的进程，依据pid杀掉" class="headerlink" title="3.杀掉占用端口的进程，依据pid杀掉"></a>3.杀掉占用端口的进程，依据pid杀掉</h5></li>

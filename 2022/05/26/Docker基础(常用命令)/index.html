@@ -448,14 +448,14 @@ docker --help //docker命令提示（可以查询docker的所有操作命令）
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-05-26
+                    2022-06-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    664
+                    666
                 </div>
                 
 
@@ -491,34 +491,39 @@ docker --help //docker命令提示（可以查询docker的所有操作命令）
 <table>
 <thead>
 <tr>
-<th align="center">属性</th>
+<th>属性</th>
 <th>功能</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">REPOSITORY</td>
+<td>REPOSITORY</td>
 <td>表示镜像仓库源</td>
 </tr>
 <tr>
-<td align="center">TAG</td>
+<td>TAG</td>
 <td>表示镜像的标签(个人理解为版本标签)</td>
 </tr>
 <tr>
-<td align="center">IMAGE ID</td>
+<td>IMAGE ID</td>
 <td>表示镜像ID</td>
 </tr>
 <tr>
-<td align="center">CREATED</td>
+<td>CREATED</td>
 <td>表示镜像创建的时间</td>
 </tr>
 <tr>
-<td align="center">SIZE</td>
+<td>SIZE</td>
 <td>表示镜像的大小</td>
 </tr>
+<tr>
+<td>&gt;注：1. 同一仓库可以有多个TAG，代表这个仓库的不同版本，我们使用REPOSITORY:TAG来定义不同的镜像；</td>
+<td></td>
+</tr>
+<tr>
+<td>&gt;2. 如果不指定镜像的标签，例如你使用 hello-world，docker将默认使用hello-world:latest最新版本镜像。</td>
+<td></td>
+</tr>
 </tbody></table>
-<blockquote>
-<p>注：1. 同一仓库可以有多个TAG，代表这个仓库的不同版本，我们使用REPOSITORY:TAG来定义不同的镜像；<br>2. 如果不指定镜像的标签，例如你使用 hello-world，docker将默认使用hello-world:latest最新版本镜像。</p>
-</blockquote>
 <ul>
 <li><code>docker images -a   //列出*本地所有*的镜像(含中间映像层)镜像是分层的</code><br><img src="https://img-blog.csdnimg.cn/20200930100556149.png#pic_center" alt="本地所有镜像"></li>
 <li><code>docker images -q //显示当前镜像的IMAGE ID</code><br><img src="https://img-blog.csdnimg.cn/202009301008451.png#pic_center" alt="镜像的id"></li>
